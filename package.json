@@ -3,11 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react-router": "^4.4.4",
+    "@types/react-router-dom": "^4.3.1",
+    "@zen/identity-lib": "3.0.682-4.13979",
     "bootstrap": "^4.3.1",
     "react": "^16.8.2",
     "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.2",
-    "react-scripts": "2.1.5"
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.5",
+    "redux": "^4.0.1",
+    "redux-devtools": "^3.5.0",
+    "redux-promise": "^0.6.0"
   },
   "scripts": {
     "start": "react-scripts start",

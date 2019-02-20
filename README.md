@@ -1,5 +1,23 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Setup dependencies
+
+yarn create react-app pre-sales
+yarn add react-bootstrap bootstrap
+yarn add redux
+yarn add react-redux
+yarn add redux-devtools
+yarn add redux-promise
+yarn add @zen/identity-lib@3.0.682-4.13979
+yarn add react-router-dom
+yarn add @types/react-router
+yarn add @types/react-router-dom
+
+### Optional dependencies
+
+yarn add axios
+yarn add react-helmet
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -66,3 +84,19 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Sample reference sites
+
+#### JavaScript Extensions
+
+https://hackernoon.com/10-essential-vs-code-extensions-for-javascript-developers-in-2019-e8320e3f421e
+
+#### Sample React demos
+
+https://github.com/facebook/create-react-app#creating-an-app
+https://tighten.co/blog/react-101-using-redux
+https://react-bootstrap.github.io/getting-started/introduction
+https://github.com/sohail87/ReduxBookList
+https://github.com/sohail87/ReduxFormsReactRouterBlog
+
+https://github.com/jamietwells/typescript-training/blob/master/readme.md
