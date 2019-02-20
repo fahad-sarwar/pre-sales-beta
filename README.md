@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Setup dependencies
 
-yarn create react-app pre-sales
+yarn create react-app pre-sales-beta
 
 yarn add react-bootstrap bootstrap
 
