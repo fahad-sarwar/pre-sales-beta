@@ -95,13 +95,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-### Sample reference sites
+## Sample reference sites
 
-#### JavaScript Extensions
+### JavaScript Extensions
 
 https://hackernoon.com/10-essential-vs-code-extensions-for-javascript-developers-in-2019-e8320e3f421e
 
-#### Sample React demos
+### Sample React demos
 
 https://github.com/facebook/create-react-app#creating-an-app
 
