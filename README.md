@@ -3,19 +3,29 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Setup dependencies
 
 yarn create react-app pre-sales
+
 yarn add react-bootstrap bootstrap
+
 yarn add redux
+
 yarn add react-redux
+
 yarn add redux-devtools
+
 yarn add redux-promise
+
 yarn add @zen/identity-lib@3.0.682-4.13979
+
 yarn add react-router-dom
+
 yarn add @types/react-router
+
 yarn add @types/react-router-dom
 
 ### Optional dependencies
 
 yarn add axios
+
 yarn add react-helmet
 
 ## Available Scripts
