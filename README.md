@@ -104,9 +104,13 @@ https://hackernoon.com/10-essential-vs-code-extensions-for-javascript-developers
 #### Sample React demos
 
 https://github.com/facebook/create-react-app#creating-an-app
+
 https://tighten.co/blog/react-101-using-redux
+
 https://react-bootstrap.github.io/getting-started/introduction
+
 https://github.com/sohail87/ReduxBookList
+
 https://github.com/sohail87/ReduxFormsReactRouterBlog
 
 https://github.com/jamietwells/typescript-training/blob/master/readme.md
