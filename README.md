@@ -114,3 +114,17 @@ https://github.com/sohail87/ReduxBookList
 https://github.com/sohail87/ReduxFormsReactRouterBlog
 
 https://github.com/jamietwells/typescript-training/blob/master/readme.md
+
+### Sample React + Redux demos
+
+https://redux.js.org/basics/example
+
+https://github.com/gothinkster/react-redux-realworld-example-app
+
+https://medium.freecodecamp.org/how-to-use-redux-in-reactjs-with-real-life-examples-687ab4441b85
+
+https://itnext.io/tutorial-simple-react-redux-app-cd559621ec00
+
+https://appdividend.com/2018/06/14/how-to-connect-react-and-redux-with-example/ - GOOD ONE
+
+https://codeburst.io/redux-a-crud-example-abb834d763c9
