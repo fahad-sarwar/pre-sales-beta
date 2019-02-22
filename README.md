@@ -22,6 +22,12 @@ yarn add @types/react-router
 
 yarn add @types/react-router-dom
 
+yarn add @fortawesome/fontawesome-svg-core
+
+yarn add @fortawesome/free-solid-svg-icons
+
+yarn add @fortawesome/react-fontawesome
+
 ### Optional dependencies
 
 yarn add axios

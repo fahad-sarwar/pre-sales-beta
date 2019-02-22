@@ -9,6 +9,8 @@ import {
   Navbar,
   Row
 } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 class App extends Component {
@@ -87,6 +89,9 @@ class App extends Component {
               </Form>
             </Card.Body>
           </Card>
+          <div>
+            Favorite Food: <FontAwesomeIcon icon={faCoffee} />
+          </div>
         </Container>
       </div>
     );
