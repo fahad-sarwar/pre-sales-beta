@@ -10,7 +10,7 @@ import {
   Row
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 class App extends Component {
@@ -31,8 +31,8 @@ class App extends Component {
         </Navbar>
         <Container className="navbar-body-padding">
           <Card>
-            <Card.Header>Check Availability</Card.Header>
             <Card.Body>
+              <h4>Check Availability</h4>
               <Form>
                 <Form.Row>
                   <Col>
@@ -55,8 +55,8 @@ class App extends Component {
             <Col>&nbsp;</Col>
           </Row>
           <Card>
-            <Card.Header>Select Address</Card.Header>
             <Card.Body>
+              <h4>Select Address</h4>
               <Form>
                 <Form.Group>
                   <Form.Control as="select" multiple>
@@ -89,9 +89,77 @@ class App extends Component {
               </Form>
             </Card.Body>
           </Card>
-          <div>
-            Favorite Food: <FontAwesomeIcon icon={faCoffee} />
-          </div>
+          <Row>
+            <Col>&nbsp;</Col>
+            <Col>&nbsp;</Col>
+          </Row>
+          <h4>Results</h4>
+          <Card>
+            <Card.Body>
+              <Row>
+                <Col md={1}>Product</Col>
+                <Col md={1}>RAG</Col>
+                <Col md={2}>Exchange</Col>
+                <Col md={3}>Reason Code</Col>
+                <Col md={2}>Download</Col>
+                <Col md={1}>Upload</Col>
+                <Col md={1}>Min</Col>
+                <Col md={1}>Max</Col>
+              </Row>
+              <Row>
+                <Col>
+                  <label>ADSL</label>
+                </Col>
+                <Col>
+                  <FontAwesomeIcon icon={faCheckCircle} />
+                </Col>
+                <Col>
+                  <label>Enabled</label>
+                </Col>
+                <Col>
+                  <label>Broadband on fibre technology</label>
+                </Col>
+                <Col>
+                  <label>67700</label>
+                </Col>
+                <Col>
+                  <label>19000</label>
+                </Col>
+                <Col>
+                  <label>66200</label>
+                </Col>
+                <Col>
+                  <label>80000</label>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <label>Fibre</label>
+                </Col>
+                <Col>
+                  <FontAwesomeIcon icon={faCheckCircle} />
+                </Col>
+                <Col>
+                  <label>Enabled</label>
+                </Col>
+                <Col>
+                  <label>Broadband on fibre technology</label>
+                </Col>
+                <Col>
+                  <label>7500</label>
+                </Col>
+                <Col>
+                  <label>1000</label>
+                </Col>
+                <Col>
+                  <label>6500</label>
+                </Col>
+                <Col>
+                  <label>8500</label>
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
         </Container>
       </div>
     );
