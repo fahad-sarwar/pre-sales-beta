@@ -4,7 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 yarn create react-app pre-sales-beta
 
-yarn add react-bootstrap bootstrap
+yarn add bootstrap 
+
+yarn add reactstrap
 
 yarn add redux
 

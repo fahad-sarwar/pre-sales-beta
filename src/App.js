@@ -8,7 +8,7 @@ import {
   Nav,
   Navbar,
   Row
-} from 'react-bootstrap';
+} from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
