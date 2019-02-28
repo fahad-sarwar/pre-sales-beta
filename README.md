@@ -30,6 +30,10 @@ yarn add @fortawesome/free-solid-svg-icons
 
 yarn add @fortawesome/react-fontawesome
 
+### Zen dependencies
+
+yarn add @zen/identity-lib
+
 ### Optional dependencies
 
 yarn add axios

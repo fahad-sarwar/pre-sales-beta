@@ -1137,10 +1137,10 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.1.tgz#5c85d662f76fa1d34575766c5dcd6615abcd30d8"
   integrity sha512-FZdkNBDqBRHKQ2MEbSC17xnPFOhZxeJ2YGSfr2BKf3sujG49Qe3bB+rGCwQfIaA7WHnGeGkSijX4FuBCdrzW/g==
 
-"@zen/identity-lib@3.0.682-4.13979":
-  version "3.0.682-4.13979"
-  resolved "https://repositories.pse.zen.co.uk/repository/npm-sysdev/@zen/identity-lib/-/identity-lib-3.0.682-4.13979.tgz#53ff8971e983e54460e3a9804eef75cefd2b8dd6"
-  integrity sha512-PDlAT/YTgfiCC0DK8z8tGHZRd3SVulrL47Vi3EQ5+EeZdg4mGZzfQrooaeXIt/ExIatkZN+hO1ryfDNHCu5ACg==
+"@zen/identity-lib@^3.1.691-7.33996":
+  version "3.1.691-7.33996"
+  resolved "https://repositories.pse.zen.co.uk/repository/npm-sysdev/@zen/identity-lib/-/identity-lib-3.1.691-7.33996.tgz#59a578dd0dad5a9e302cac80e74548467993b8a9"
+  integrity sha512-u0pFwNFyZ91yxqxvZz0+QIobgROTWcUNL1RnhFzA1p2vGCb+rC9g8EXJbknCKE1FOkvTaajCjI89vABOuG33vg==
   dependencies:
     babel-polyfill "^6.26.0"
     moment "^2.22.2"
