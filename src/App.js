@@ -3,12 +3,10 @@ import {
   Button,
   Card,
   CardBody,
-  CardTitle,
+  CardHeader,
   Col,
   Collapse,
   Container,
-  Form,
-  FormGroup,
   Input,
   Nav,
   NavItem,
@@ -33,7 +31,7 @@ class App extends Component {
   }
 
   toggle() {
-    this.state({
+    this.setState({
       isOpen: !this.state.isOpen
     });
   }
@@ -42,12 +40,14 @@ class App extends Component {
     return (
       <div>
         <Navbar dark expand="lg" color="dark">
-          <NavbarBrand href="#home">React-Bootstrap</NavbarBrand>
+          <NavbarBrand href="#home">Pre-Sales-Beta</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="#home">Home</NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink href="#availabilityChecker">
                   Availability Checker
                 </NavLink>
@@ -57,31 +57,29 @@ class App extends Component {
         </Navbar>
         <Container className="navbar-body-padding">
           <Card>
+          <CardHeader>Check Availability</CardHeader>
             <CardBody>
-              <CardTitle>Check Availability</CardTitle>
-              <Form inline>
-                <FormGroup className="mb-4 mr-sm-4 mb-sm-0">
-                  <Input
-                    name="phoneNumber"
-                    id="phoneNumber"
-                    placeholder="Enter phone number"
-                    className="mr-sm-2"
-                  />
-                </FormGroup>
-                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+              <Row>
+                <Col>
+                <Input
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  placeholder="Enter phone number"
+                />
+                </Col>
+                <Col>
                   <Input
                     name="postcode"
                     id="postcode"
                     placeholder="Enter postcode"
-                    className="mr-sm-2"
                   />
-                </FormGroup>
-                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                  <Button color="primary" type="submit" block>
+                </Col>
+                <Col>
+                  <Button block color="primary" type="submit">
                     Check
                   </Button>
-                </FormGroup>
-              </Form>
+                </Col>
+              </Row>
             </CardBody>
           </Card>
           <Row>
@@ -89,10 +87,10 @@ class App extends Component {
             <Col>&nbsp;</Col>
           </Row>
           <Card>
+          <CardHeader>Select Address</CardHeader>
             <CardBody>
-              <CardTitle>Select Address</CardTitle>
-              <Form>
-                <FormGroup>
+              <Row>
+                <Col>
                   <Input
                     type="select"
                     name="selectAddress"
@@ -121,11 +119,18 @@ class App extends Component {
                       13 High Street, Rochdale, Lancashire, OL11 5ED
                     </option>
                   </Input>
-                </FormGroup>
-                <Button color="primary" block>
-                  Select
-                </Button>
-              </Form>
+                </Col>
+              </Row>
+              <Row>
+                <Col>&nbsp;</Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Button color="primary" block>
+                    Select
+                  </Button>
+                </Col>
+              </Row>
             </CardBody>
           </Card>
           <Row>
@@ -133,67 +138,67 @@ class App extends Component {
             <Col>&nbsp;</Col>
           </Row>
           <Card>
-            <CardTitle>Results</CardTitle>
+          <CardHeader>Results</CardHeader>
             <CardBody>
               <Row>
-                <Col md={1}>Product</Col>
-                <Col md={1}>RAG</Col>
-                <Col md={2}>Exchange</Col>
-                <Col md={3}>Reason Code</Col>
-                <Col md={2}>Download</Col>
-                <Col md={1}>Upload</Col>
-                <Col md={1}>Min</Col>
-                <Col md={1}>Max</Col>
+                <Col xs="1">Product</Col>
+                <Col xs="1">RAG</Col>
+                <Col xs="1">Exchge</Col>
+                <Col xs="4">Reason Code</Col>
+                <Col xs="2">Download</Col>
+                <Col xs="1">Upload</Col>
+                <Col xs="1">Min</Col>
+                <Col xs="1">Max</Col>
               </Row>
               <Row>
-                <Col>
+                <Col xs="1">
                   <label>ADSL</label>
                 </Col>
-                <Col>
+                <Col xs="1">
                   <FontAwesomeIcon icon={faCheckCircle} />
                 </Col>
-                <Col>
+                <Col xs="1">
                   <label>Enabled</label>
                 </Col>
-                <Col>
+                <Col xs="4">
                   <label>Broadband on fibre technology</label>
                 </Col>
-                <Col>
+                <Col xs="2">
                   <label>67700</label>
                 </Col>
-                <Col>
+                <Col xs="1">
                   <label>19000</label>
                 </Col>
-                <Col>
+                <Col xs="1">
                   <label>66200</label>
                 </Col>
-                <Col>
+                <Col xs="1">
                   <label>80000</label>
                 </Col>
               </Row>
               <Row>
-                <Col>
+                <Col xs="1">
                   <label>Fibre</label>
                 </Col>
-                <Col>
+                <Col xs="1">
                   <FontAwesomeIcon icon={faCheckCircle} />
                 </Col>
-                <Col>
+                <Col xs="1">
                   <label>Enabled</label>
                 </Col>
-                <Col>
+                <Col xs="4">
                   <label>Broadband on fibre technology</label>
                 </Col>
-                <Col>
+                <Col xs="2">
                   <label>7500</label>
                 </Col>
-                <Col>
+                <Col xs="1">
                   <label>1000</label>
                 </Col>
-                <Col>
+                <Col xs="1">
                   <label>6500</label>
                 </Col>
-                <Col>
+                <Col xs="1">
                   <label>8500</label>
                 </Col>
               </Row>
