@@ -2,11 +2,20 @@ import React, { Component } from 'react';
 import {
   Button,
   Card,
+  CardBody,
+  CardTitle,
   Col,
+  Collapse,
   Container,
   Form,
+  FormGroup,
+  Input,
   Nav,
+  NavItem,
+  NavLink,
   Navbar,
+  NavbarBrand,
+  NavbarToggler,
   Row
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,52 +23,82 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+
+  toggle() {
+    this.state({
+      isOpen: !this.state.isOpen
+    });
+  }
+
   render() {
     return (
       <div>
-        <Navbar bg="dark" expand="lg" variant="dark">
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#availabilityChecker">
-                Availability Checker
-              </Nav.Link>
+        <Navbar dark expand="lg" color="dark">
+          <NavbarBrand href="#home">React-Bootstrap</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="#home">Home</NavLink>
+                <NavLink href="#availabilityChecker">
+                  Availability Checker
+                </NavLink>
+              </NavItem>
             </Nav>
-          </Navbar.Collapse>
+          </Collapse>
         </Navbar>
         <Container className="navbar-body-padding">
           <Card>
-            <Card.Body>
-              <h4>Check Availability</h4>
-              <Form>
-                <Form.Row>
-                  <Col>
-                    <Form.Control placeholder="Enter phone number" />
-                  </Col>
-                  <Col>
-                    <Form.Control placeholder="Enter postcode" />
-                  </Col>
-                  <Col>
-                    <Button variant="primary" type="submit" block>
-                      Check
-                    </Button>
-                  </Col>
-                </Form.Row>
+            <CardBody>
+              <CardTitle>Check Availability</CardTitle>
+              <Form inline>
+                <FormGroup className="mb-4 mr-sm-4 mb-sm-0">
+                  <Input
+                    name="phoneNumber"
+                    id="phoneNumber"
+                    placeholder="Enter phone number"
+                    className="mr-sm-2"
+                  />
+                </FormGroup>
+                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                  <Input
+                    name="postcode"
+                    id="postcode"
+                    placeholder="Enter postcode"
+                    className="mr-sm-2"
+                  />
+                </FormGroup>
+                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                  <Button color="primary" type="submit" block>
+                    Check
+                  </Button>
+                </FormGroup>
               </Form>
-            </Card.Body>
+            </CardBody>
           </Card>
           <Row>
             <Col>&nbsp;</Col>
             <Col>&nbsp;</Col>
           </Row>
           <Card>
-            <Card.Body>
-              <h4>Select Address</h4>
+            <CardBody>
+              <CardTitle>Select Address</CardTitle>
               <Form>
-                <Form.Group>
-                  <Form.Control as="select" multiple>
+                <FormGroup>
+                  <Input
+                    type="select"
+                    name="selectAddress"
+                    as="selectAddress"
+                    multiple
+                  >
                     <option>
                       1 High Street, Rochdale, Lancashire, OL11 5ED
                     </option>
@@ -81,21 +120,21 @@ class App extends Component {
                     <option>
                       13 High Street, Rochdale, Lancashire, OL11 5ED
                     </option>
-                  </Form.Control>
-                </Form.Group>
-                <Button variant="primary" type="submit" block>
+                  </Input>
+                </FormGroup>
+                <Button color="primary" block>
                   Select
                 </Button>
               </Form>
-            </Card.Body>
+            </CardBody>
           </Card>
           <Row>
             <Col>&nbsp;</Col>
             <Col>&nbsp;</Col>
           </Row>
-          <h4>Results</h4>
           <Card>
-            <Card.Body>
+            <CardTitle>Results</CardTitle>
+            <CardBody>
               <Row>
                 <Col md={1}>Product</Col>
                 <Col md={1}>RAG</Col>
@@ -158,7 +197,7 @@ class App extends Component {
                   <label>8500</label>
                 </Col>
               </Row>
-            </Card.Body>
+            </CardBody>
           </Card>
         </Container>
       </div>
