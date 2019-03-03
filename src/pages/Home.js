@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link  } from 'react-router-dom'
 import { Jumbotron, Button } from 'reactstrap';
-import '../App.css';
 
 class Home extends Component {
 
