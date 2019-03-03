@@ -5,7 +5,6 @@ import {
   CardBody,
   CardHeader,
   Col,
-  Container,
   Input,
   Row
 } from 'reactstrap';
@@ -17,7 +16,6 @@ class CheckAvailability extends Component {
     render() {
         return (
             <div>
-                <Container className="navbar-body-padding">
                 <Card>
                 <CardHeader>Check Availability</CardHeader>
                     <CardBody>
@@ -166,7 +164,6 @@ class CheckAvailability extends Component {
                     </Row>
                     </CardBody>
                 </Card>
-                </Container>
             </div>
         );
     }

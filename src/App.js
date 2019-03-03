@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from "react-router-dom";
 import { Route, Switch } from "react-router";
-import {
-  PrivateRoute
-} from "@zen/identity-lib";
+import { BrowserRouter } from "react-router-dom";
 import {
   Collapse,
   Container,
@@ -38,15 +35,15 @@ class App extends Component {
     return (
       <div>
         <Navbar dark expand="lg" color="dark">
-          <NavbarBrand href="#home">Pre-Sales-Beta</NavbarBrand>
+          <NavbarBrand href="/">Pre-Sales-Beta</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="#home">Home</NavLink>
+                <NavLink href="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#availabilityChecker">
+                <NavLink href="/check-availability">
                   Availability Checker
                 </NavLink>
               </NavItem>
@@ -59,9 +56,9 @@ class App extends Component {
             <Switch>
               <Route exact={true} path="/" component={Home} />
 
-              <PrivateRoute
+              <Route
                 exact={true}
-                path="/checkavailability"
+                path="/check-availability"
                 component={CheckAvailability}
               />
 

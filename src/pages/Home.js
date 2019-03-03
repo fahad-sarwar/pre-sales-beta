@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Link  } from 'react-router-dom'
 import { Jumbotron, Button } from 'reactstrap';
 import '../App.css';
 
 class Home extends Component {
+
     render() {
         return (
             <div>
@@ -12,7 +14,7 @@ class Home extends Component {
                 <hr className="my-2" />
                 <p>To perform a broadband availability check, click the button below:</p>
                 <p className="lead">
-                    <Button color="primary">Check Availability</Button>
+                    <Button tag={Link} to="/check-availability" color="primary">Check Availability</Button>
                 </p>
                 </Jumbotron>
             </div>
