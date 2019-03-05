@@ -113,6 +113,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 https://hackernoon.com/10-essential-vs-code-extensions-for-javascript-developers-in-2019-e8320e3f421e
 
+### Styling
+
+https://reactstrap.github.io/
+
 ### Sample React demos
 
 https://github.com/facebook/create-react-app#creating-an-app
