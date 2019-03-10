@@ -30,6 +30,8 @@ yarn add @fortawesome/free-solid-svg-icons
 
 yarn add @fortawesome/react-fontawesome
 
+yarn add dotenv dotenv-expand -- Although this comes with create-react-app
+
 ### Zen dependencies
 
 yarn add @zen/identity-lib
@@ -144,3 +146,21 @@ https://itnext.io/tutorial-simple-react-redux-app-cd559621ec00
 https://appdividend.com/2018/06/14/how-to-connect-react-and-redux-with-example/ - GOOD ONE
 
 https://codeburst.io/redux-a-crud-example-abb834d763c9
+
+### How to switch config environments
+
+https://stackoverflow.com/questions/44389288/react-env-variables-with-env
+
+#### Sample configuration
+
+REACT_APP_ENVIRONMENT="dev"
+REACT_APP_BEARERTOKENAUTHORITY="https://identity.testing.zen.co.uk"
+REACT_APP_IDENTITYSERVERURL="https://identity.testing.zen.co.uk/"
+REACT_APP_CLIENTID="presalesbeta"
+REACT_APP_REDIRECTURL="http://localhost:3000/login"
+REACT_APP_POSTLOGOUTREDIRECTURL="https://www.testing1.sysdev.zen.co.uk/"
+REACT_APP_SCOPES="openid email profile roles read_authorisation dialogueCheck addressRead lineCheck oss_read_availability" 
+REACT_APP_SILENTREDIRECTURL="http://localhost:3000/renewlogin"
+REACT_APP_SIGNOUTURL="http://localhost:3000/signedout"
+REACT_APP_AUTHORISATIONURL="https://authorisation.api.testing1.sysdev.zen.co.uk/api/authorise/presalesbeta"
+REACT_APP_DIALOGUESERVICESURL="https://dialogueservices.api.testing1.sysdev.zen.co.uk"

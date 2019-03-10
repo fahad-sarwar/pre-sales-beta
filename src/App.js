@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
-import {
-  Container,
-} from 'reactstrap';
+import { Container } from 'reactstrap';
 import './App.css';
 import AppNavBar from './components/AppNavBar';
 import Home from './pages/Home';

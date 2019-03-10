@@ -18,7 +18,6 @@ import {
                     </Col>
                     <Col xs="9">
                         <Input
-                            id="environment"
                             value={this.props.value}
                             disabled
                         />
