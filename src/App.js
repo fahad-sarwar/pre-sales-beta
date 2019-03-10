@@ -8,6 +8,8 @@ import './App.css';
 import AppNavBar from './components/AppNavBar';
 import Home from './pages/Home';
 import CheckAvailability from './pages/CheckAvailability';
+import Configuration from './pages/Configuration';
+import Identity from './pages/Identity';
 
 class App extends Component {
   render() {
@@ -23,6 +25,18 @@ class App extends Component {
                 exact={true}
                 path="/check-availability"
                 component={CheckAvailability}
+              />
+
+              <Route
+                exact={true}
+                path="/configuration"
+                component={Configuration}
+              />
+
+              <Route
+                exact={true}
+                path="/identity"
+                component={Identity}
               />
 
             </Switch>

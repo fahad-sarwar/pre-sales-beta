@@ -37,9 +37,13 @@ class AppNavBar extends Component {
                             <NavLink href="/">Home</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/check-availability">
-                            Availability Checker
-                            </NavLink>
+                            <NavLink href="/check-availability">Availability Checker</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/configuration">Configuration</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/identity">Identity</NavLink>
                         </NavItem>
                         </Nav>
                     </Collapse>

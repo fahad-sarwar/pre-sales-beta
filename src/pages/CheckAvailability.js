@@ -16,7 +16,7 @@ class CheckAvailability extends Component {
         return (
             <div>
                 <Card>
-                <CardHeader>Check Availability</CardHeader>
+                    <CardHeader>Check Availability</CardHeader>
                     <CardBody>
                     <Row>
                         <Col>
@@ -46,7 +46,7 @@ class CheckAvailability extends Component {
                     <Col>&nbsp;</Col>
                 </Row>
                 <Card>
-                <CardHeader>Select Address</CardHeader>
+                    <CardHeader>Select Address</CardHeader>
                     <CardBody>
                     <Row>
                         <Col>
@@ -97,7 +97,7 @@ class CheckAvailability extends Component {
                     <Col>&nbsp;</Col>
                 </Row>
                 <Card>
-                <CardHeader>Results</CardHeader>
+                    <CardHeader>Results</CardHeader>
                     <CardBody>
                     <Row>
                         <Col xs="1">Product</Col>
