@@ -5,6 +5,7 @@ import {
     Label,
     Row
   } from 'reactstrap';
+  import PropTypes from 'prop-types';
 
   class ConfigurationItem extends Component {
 
@@ -26,6 +27,11 @@ import {
             </div>
         );
     }
+}
+
+ConfigurationItem.propTypes = {
+    name: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired
 }
   
  export default ConfigurationItem;
