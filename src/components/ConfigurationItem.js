@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {
     Col,
+    FormGroup,
     Input,
-    Label,
-    Row
+    Label
   } from 'reactstrap';
   import PropTypes from 'prop-types';
 
@@ -12,19 +12,12 @@ import {
     render() {
 
         return (
-            <div>
-                <Row>
-                    <Col xs="3" className="text-right">
-                        <Label>{this.props.name}:</Label>
-                    </Col>
-                    <Col xs="9">
-                        <Input
-                            value={this.props.value}
-                            disabled
-                        />
-                    </Col>
-                </Row>
-            </div>
+            <FormGroup row>
+                <Label xs={3} className="text-right">{this.props.name}:</Label>
+                <Col xs={9}>
+                    <Input value={this.props.value} />
+                </Col>
+            </FormGroup>
         );
     }
 }

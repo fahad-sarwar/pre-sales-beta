@@ -10,6 +10,7 @@
     "@types/react-router-dom": "^4.3.1",
     "@zen/identity-lib": "^3.1.691-7.33996",
     "bootstrap": "^4.3.1",
+    "dotenv-webpack": "^1.7.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-fontawesome": "^1.6.1",

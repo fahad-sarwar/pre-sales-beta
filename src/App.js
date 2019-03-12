@@ -5,7 +5,7 @@ import { Container } from 'reactstrap';
 import './App.css';
 import AppNavBar from './components/AppNavBar';
 import Home from './pages/Home';
-import CheckAvailability from './pages/CheckAvailability';
+import CheckAvailability from './pages/availability/CheckAvailability';
 import Configuration from './pages/Configuration';
 import Identity from './pages/Identity';
 

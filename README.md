@@ -32,6 +32,8 @@ yarn add @fortawesome/react-fontawesome
 
 yarn add dotenv dotenv-expand -- Although this comes with create-react-app
 
+yarn add dotenv-webpack
+
 ### Zen dependencies
 
 yarn add @zen/identity-lib
