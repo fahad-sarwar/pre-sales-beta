@@ -157,24 +157,24 @@ Alternative to dotnet-env https://www.npmjs.com/package/react-global-configurati
 
 How to read file: https://medium.com/@trekinbami/using-environment-variables-in-react-6b0a99d83cf5
 
-REACT_APP_ENVIRONMENT="dev"
+REACT_APP_ENVIRONMENT=dev
 
-REACT_APP_BEARERTOKENAUTHORITY="https://identity.testing.zen.co.uk"
+REACT_APP_BEARERTOKENAUTHORITY=https://identity.testing.zen.co.uk
 
-REACT_APP_IDENTITYSERVERURL="https://identity.testing.zen.co.uk/"
+REACT_APP_IDENTITYSERVERURL=https://identity.testing.zen.co.uk/
 
-REACT_APP_CLIENTID="presalesbeta"
+REACT_APP_CLIENTID=bssdir-presalesbeta
 
-REACT_APP_REDIRECTURL="http://localhost:3000/login"
+REACT_APP_REDIRECTURL=http://localhost:3000/login
 
-REACT_APP_POSTLOGOUTREDIRECTURL="https://www.testing1.sysdev.zen.co.uk/"
+REACT_APP_POSTLOGOUTREDIRECTURL=https://www.testing1.sysdev.zen.co.uk/
 
-REACT_APP_SCOPES="openid email profile roles read_authorisation dialogueCheck addressRead lineCheck oss_read_availability" 
+REACT_APP_SCOPES=openid email profile roles read_authorisation dialogueCheck addressRead lineCheck oss_read_availability
 
-REACT_APP_SILENTREDIRECTURL="http://localhost:3000/renewlogin"
+REACT_APP_SILENTREDIRECTURL=http://localhost:3000/renewlogin
 
-REACT_APP_SIGNOUTURL="http://localhost:3000/signedout"
+REACT_APP_SIGNOUTURL=http://localhost:3000/signedout
 
-REACT_APP_AUTHORISATIONURL="https://authorisation.api.testing1.sysdev.zen.co.uk/api/authorise/presalesbeta"
+REACT_APP_AUTHORISATIONURL=https://authorisation.api.testing1.sysdev.zen.co.uk/api/authorise/presalesbeta
 
-REACT_APP_DIALOGUESERVICESURL="https://dialogueservices.api.testing1.sysdev.zen.co.uk"
+REACT_APP_DIALOGUESERVICESURL=https://dialogueservices.api.testing1.sysdev.zen.co.uk"
