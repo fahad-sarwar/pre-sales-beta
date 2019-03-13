@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardBody, CardHeader, Form } from 'reactstrap';
 import ConfigurationItem from '../components/ConfigurationItem';
-// import Config from '../configuration/Config';
+import Config from '../configuration/Config.js';
 
 class Configuration extends Component {
 
@@ -12,18 +12,18 @@ class Configuration extends Component {
                     <CardHeader>Configuration Items</CardHeader>
                     <CardBody>
                         <Form>
-                            <ConfigurationItem name="Node Environment" value={process.env.NODE_ENV} />
-                            <ConfigurationItem name="Environment" value={process.env.REACT_APP_ENVIRONMENT} />
-                            <ConfigurationItem name="Bearer Token Authority" value={process.env.REACT_APP_BEARERTOKENAUTHORITY} />
-                            <ConfigurationItem name="Identity Server Url" value={process.env.REACT_APP_IDENTITYSERVERURL} />
-                            <ConfigurationItem name="Client Id" value={process.env.REACT_APP_CLIENTID} />
-                            <ConfigurationItem name="Redirect Url" value={process.env.REACT_APP_REDIRECTURL} />
-                            <ConfigurationItem name="Post Logout Redirect Url" value={process.env.REACT_APP_POSTLOGOUTREDIRECTURL} />
-                            <ConfigurationItem name="Scopes" value={process.env.REACT_APP_SCOPES} />
-                            <ConfigurationItem name="Silent Redirect Url" value={process.env.REACT_APP_SILENTREDIRECTURL} />
-                            <ConfigurationItem name="Signout Url" value={process.env.REACT_APP_SIGNOUTURL} />
-                            <ConfigurationItem name="Authorisation Url" value={process.env.REACT_APP_AUTHORISATIONURL} />
-                            <ConfigurationItem name="Dialogue Services Url" value={process.env.REACT_APP_DIALOGUESERVICESURL} />
+                            <ConfigurationItem name="Node Environment" value={Config.nodeEnvironment} />
+                            <ConfigurationItem name="Environment" value={Config.environment} />
+                            <ConfigurationItem name="Bearer Token Authority" value={Config.bearerTokenAuthority} />
+                            <ConfigurationItem name="Identity Server Url" value={Config.identityServerUrl} />
+                            <ConfigurationItem name="Client Id" value={Config.clientId} />
+                            <ConfigurationItem name="Redirect Url" value={Config.redirectUrl} />
+                            <ConfigurationItem name="Post Logout Redirect Url" value={Config.postLogoutRedirectUrl} />
+                            <ConfigurationItem name="Scopes" value={Config.scopes} />
+                            <ConfigurationItem name="Silent Redirect Url" value={Config.silentRedirectUrl} />
+                            <ConfigurationItem name="Signout Url" value={Config.signoutUrl} />
+                            <ConfigurationItem name="Authorisation Url" value={Config.authorisationUrl} />
+                            <ConfigurationItem name="Dialogue Services Url" value={Config.dialogueServicesUrl} />
                         </Form>
                     </CardBody>
                 </Card>
