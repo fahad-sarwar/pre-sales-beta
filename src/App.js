@@ -6,7 +6,7 @@ import './App.css';
 import AppNavBar from './components/AppNavBar';
 import Home from './pages/Home';
 import CheckAvailability from './pages/availability/CheckAvailability';
-import Configuration from './pages/Configuration';
+import Configuration from './pages/configuration/Configuration';
 import Identity from './pages/Identity';
 
 class App extends Component {
