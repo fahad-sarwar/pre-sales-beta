@@ -15,7 +15,7 @@ import {
             <FormGroup row>
                 <Label xs={3} className="text-right">{this.props.name}:</Label>
                 <Col xs={9}>
-                    <Input value={this.props.value} />
+                    <Input name={this.props.name} value={this.props.value} readOnly />
                 </Col>
             </FormGroup>
         );
