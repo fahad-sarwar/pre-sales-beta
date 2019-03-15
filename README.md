@@ -49,7 +49,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
@@ -165,15 +165,15 @@ REACT_APP_IDENTITYSERVERURL=https://identity.testing.zen.co.uk/
 
 REACT_APP_CLIENTID=bssdir-presalesbeta
 
-REACT_APP_REDIRECTURL=http://localhost:3000/login
+REACT_APP_REDIRECTURL=http://localhost:8080/login
 
 REACT_APP_POSTLOGOUTREDIRECTURL=https://www.testing1.sysdev.zen.co.uk/
 
 REACT_APP_SCOPES=openid email profile roles read_authorisation dialogueCheck addressRead lineCheck oss_read_availability
 
-REACT_APP_SILENTREDIRECTURL=http://localhost:3000/renewlogin
+REACT_APP_SILENTREDIRECTURL=http://localhost:8080/renewlogin
 
-REACT_APP_SIGNOUTURL=http://localhost:3000/signedout
+REACT_APP_SIGNOUTURL=http://localhost:8080/signedout
 
 REACT_APP_AUTHORISATIONURL=https://authorisation.api.testing1.sysdev.zen.co.uk/api/authorise/presalesbeta
 

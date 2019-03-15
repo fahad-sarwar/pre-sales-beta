@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router";
-import { RenewLogin, SecurityManager, Login } from "@zen/identity-lib";
+import { Login, PrivateRoute, RenewLogin, SecurityManager } from "@zen/identity-lib";
 import { BrowserRouter } from "react-router-dom";
 import { Container } from "reactstrap";
 import "./App.css";
@@ -13,23 +13,25 @@ import Identity from "./pages/Identity";
 import Unauthorised from "./pages/Unauthorised";
 import Config from "./configuration/Config";
 
+const securityProps = {
+  securityConfig: {
+    authority: Config.bearerTokenAuthority,
+    client_id: Config.clientId,
+    post_logout_redirect_uri: Config.postLogoutRedirectUrl,
+    redirect_uri: Config.redirectUrl,
+    scope: Config.scopes,
+    silent_redirect_uri: Config.silentRedirectUrl,
+    authorisation_uri: Config.authorisationUrl
+  },
+  navConfig: navConfig,
+  handleHidden: false,
+  unauthorisedComponent: Unauthorised
+};
+
 class App extends Component {
   render() {
     return (
-      <SecurityManager
-        securityConfig={{
-          authority: Config.bearerTokenAuthority,
-          client_id: Config.clientId,
-          post_logout_redirect_uri: Config.postLogoutRedirectUrl,
-          redirect_uri: Config.redirectUrl,
-          scope: Config.scopes,
-          silent_redirect_uri: Config.silentRedirectUrl,
-          authorisation_uri: Config.authorisationUrl
-        }}
-        navConfig={navConfig}
-        handleHidden={false}
-        unauthorisedComponent={Unauthorised}
-      >
+      <SecurityManager {...securityProps}>
         <div>
           <AppNavBar />
           <Container className="navbar-body-padding">
@@ -37,19 +39,19 @@ class App extends Component {
               <Switch>
                 <Route exact={true} path="/" component={Home} />
 
-                <Route
+                <PrivateRoute
                   exact={true}
                   path="/check-availability"
                   component={CheckAvailability}
                 />
 
-                <Route
+                <PrivateRoute
                   exact={true}
                   path="/configuration"
                   component={Configuration}
                 />
 
-                <Route
+                <PrivateRoute
                   exact={true}
                   path="/identity"
                   component={Identity}
