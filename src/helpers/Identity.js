@@ -1,4 +1,16 @@
-const identity = JSON.parse(localStorage.getItem('state'));
+const identity = JSON.parse(localStorage.getItem('state')) || {
+    idToken : "",
+    sessionState : "",
+    accessToken : "",
+    tokenType : "",
+    scope : "",
+    profile: {
+        sid : "",
+        sub : "",
+        expiresAt : ""
+    },
+    expiryDate: ""
+};
 
 module.exports  = {
     idToken : identity.id_token,
