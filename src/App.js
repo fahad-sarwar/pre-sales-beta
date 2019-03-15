@@ -9,7 +9,7 @@ import AppNavBar from "./components/AppNavBar";
 import Home from "./pages/Home";
 import CheckAvailability from "./pages/availability/CheckAvailability";
 import Configuration from "./pages/configuration/Configuration";
-import Identity from "./pages/Identity";
+import Identity from "./pages/identity/Identity";
 import Unauthorised from "./pages/Unauthorised";
 import Config from "./configuration/Config";
 

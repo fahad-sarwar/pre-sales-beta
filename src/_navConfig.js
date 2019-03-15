@@ -1,6 +1,6 @@
 import { Login, RenewLogin } from '@zen/identity-lib';
 import Home from './pages/Home';
-import Identity from './pages/Identity';
+import Identity from './pages/identity/Identity';
 import Configuration from './pages/configuration/Configuration';
 import CheckAvailability from './pages/availability/CheckAvailability';
 
