@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ConfigurationItem from './ConfigurationItem';
-import Config from '../../../configuration/Config.js';
+import Config from '../../../helpers/Config.js';
 
 class ConfigurationItemList extends Component {
     render() {

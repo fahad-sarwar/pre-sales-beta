@@ -11,7 +11,7 @@ import CheckAvailability from "./pages/availability/CheckAvailability";
 import Configuration from "./pages/configuration/Configuration";
 import Identity from "./pages/identity/Identity";
 import Unauthorised from "./pages/Unauthorised";
-import Config from "./configuration/Config";
+import Config from "./helpers/Config";
 
 const securityProps = {
   securityConfig: {
