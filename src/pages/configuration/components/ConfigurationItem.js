@@ -12,10 +12,10 @@ import {
     render() {
 
         return (
-            <FormGroup row key={"formGroup" + this.props.name}>
-                <Label xs={3} className="text-right" key={"label" + this.props.name}>{this.props.name}:</Label>
-                <Col xs={9} key={"col" + this.props.name}>
-                    <Input name={this.props.name} value={this.props.value} readOnly key={"input" + this.props.name} />
+            <FormGroup row>
+                <Label xs={3} className="text-right">{this.props.name}:</Label>
+                <Col xs={9}>
+                    <Input name={this.props.name} value={this.props.value} readOnly />
                 </Col>
             </FormGroup>
         );
