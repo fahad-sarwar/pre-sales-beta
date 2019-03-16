@@ -30,6 +30,8 @@ yarn add @fortawesome/free-solid-svg-icons
 
 yarn add @fortawesome/react-fontawesome
 
+yarn add cross-fetch
+
 yarn add dotenv dotenv-expand -- Although this comes with create-react-app
 
 ### Zen dependencies

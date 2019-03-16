@@ -15,8 +15,8 @@ class InstallationDetails extends Component {
         super(props);
 
         this.state = {
-            phoneNumber: "",
-            postcode: "",
+            phoneNumber: '',
+            postcode: 'LU1 1UL',
             postcodeIsValid: true
         };
 
@@ -31,15 +31,15 @@ class InstallationDetails extends Component {
     }
 
     isPostcodeValid() {
-        return !(this.state.postcode === null || this.state.postcode.trim() === '');
+        return !(this.state.postcode.trim() === '');
     }
 
     handleValidation() {
         let formIsValid = true;
 
-        this.setState({postcodeIsValid: this.isPostcodeValid()});
+        this.setState({postcodeIsValid: this.isPostcodeValid()})
 
-        if(this.state.postcodeIsValid) {
+        if(!this.state.postcodeIsValid) {
             formIsValid = false;
         }
 
@@ -52,6 +52,7 @@ class InstallationDetails extends Component {
         if(this.handleValidation())
         {
             this.props.findAddresses(this.state.postcode);
+            return;
         }
     }
 
