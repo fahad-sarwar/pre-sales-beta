@@ -179,4 +179,4 @@ REACT_APP_SIGNOUTURL=http://localhost:8080/signedout
 
 REACT_APP_AUTHORISATIONURL=https://authorisation.api.testing1.sysdev.zen.co.uk/api/authorise/presalesbeta
 
-REACT_APP_DIALOGUESERVICESURL=https://dialogueservices.api.testing1.sysdev.zen.co.uk"
+REACT_APP_DIALOGUESERVICESURL=https://dialogueservices.api.testing1.business.sysdev.zen.co.uk
