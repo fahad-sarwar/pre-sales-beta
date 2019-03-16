@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {
   Button,
   Col,
@@ -6,6 +8,7 @@ import {
   Input,
   Row
 } from 'reactstrap';
+import { findAddresses } from '../actions/index';
 
 class InstallationDetails extends Component {
     constructor(props) {
@@ -18,8 +21,6 @@ class InstallationDetails extends Component {
         };
 
         this.onInputChange = this.onInputChange.bind(this);
-        this.isPostcodeValid = this.isPostcodeValid.bind(this);
-        this.handleValidation = this.handleValidation.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
@@ -50,11 +51,8 @@ class InstallationDetails extends Component {
         
         if(this.handleValidation())
         {
-            console.log("Form is valid!");
-            return;
+            this.props.findAddresses(this.state.postcode);
         }
-
-        console.log("Form is invalid!");
     }
 
     render() {
@@ -90,6 +88,10 @@ class InstallationDetails extends Component {
             </div>
         );
     }
-  }
+}
   
-  export default InstallationDetails;
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({ findAddresses }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(InstallationDetails)
