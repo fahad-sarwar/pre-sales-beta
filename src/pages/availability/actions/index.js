@@ -16,7 +16,7 @@ export function findAddresses(postcode) {
 
     fetch(url, {
         method: 'get',
-        mode: 'cors',
+        mode: 'no-cors',
         headers: new Headers({
             'Authorization': 'Bearer ' + IdentityConfig.accessToken,
             'Content-Type': 'application/json',
