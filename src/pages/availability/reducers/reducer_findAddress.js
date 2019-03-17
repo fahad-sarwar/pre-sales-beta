@@ -9,7 +9,6 @@ export default function(state = {}, action) {
             return { ...state, addresses: action.payload.addresses }
 
         default:
-            break;
+            return state;
     }
-    return state;
 }

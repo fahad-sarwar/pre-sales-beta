@@ -15,7 +15,7 @@ import Configuration from "./pages/configuration/Configuration";
 import Identity from "./pages/identity/Identity";
 import Unauthorised from "./pages/Unauthorised";
 import Config from "./helpers/Config";
-import reducers from './pages/availability/reducers';
+import reducers from './reducers';
 
 const securityProps = {
   securityConfig: {
