@@ -15,24 +15,21 @@ class InstallationDetails extends Component {
         super(props);
 
         this.state = {
+            phoneNumber: this.props.phoneNumber || '01706548458',
+            postcode: this.props.postcode || 'LU1 1UL',
             postcodeIsValid: true
         };
 
-        this.onPhoneNumberChange = this.onPhoneNumberChange.bind(this);
-        this.onPostcodeChange = this.onPostcodeChange.bind(this);
+        this.onInputChange = this.onInputChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
-    onPhoneNumberChange (phoneNumber) {
-        this.props.dispatch('phoneNumber', phoneNumber);
-    }
-
-    onPostcodeChange (postcode) {
-        this.props.dispatch('postcode', postcode);
+    onInputChange (event) {
+        this.setState({[event.target.name]: event.target.value});
     }
 
     isPostcodeValid() {
-        return !(this.props.postcode.trim() === '');
+        return !(this.state.postcode.trim() === '');
     }
 
     handleValidation() {
@@ -52,7 +49,7 @@ class InstallationDetails extends Component {
         
         if(this.handleValidation())
         {
-            this.props.findAddresses(this.props.postcode, this.props.phoneNumber);
+            this.props.actions.findAddresses(this.state.postcode, this.state.phoneNumber);
             return;
         }
     }
@@ -66,8 +63,8 @@ class InstallationDetails extends Component {
                             name="phoneNumber"
                             id="phoneNumber"
                             placeholder="Enter phone number"
-                            value={this.props.phoneNumber}
-                            onChange={(event) => this.onPhoneNumberChange(event.target.value)}
+                            value={this.state.phoneNumber}
+                            onChange={(event) => this.onInputChange(event)}
                         />
                     </Col>
                     <Col>
@@ -75,8 +72,8 @@ class InstallationDetails extends Component {
                             name="postcode"
                             id="postcode"
                             placeholder="Enter postcode"
-                            value={this.props.postcode}
-                            onChange={(event) => this.onPostcodeChange(event.target.value)}
+                            value={this.state.postcode}
+                            onChange={(event) => this.onInputChange(event)}
                             invalid={!this.state.postcodeIsValid}
                         />
                         <FormFeedback valid={this.state.postcodeIsValid}>Please enter a postcode</FormFeedback>
