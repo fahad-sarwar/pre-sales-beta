@@ -18,14 +18,14 @@ export function findAddresses(postcode, phoneNumber) {
 
     fetch(url, {
         method: 'get',
-        mode: 'no-cors',
-        headers: new Headers({
+        credentials: 'include',
+        headers: {
             'Authorization': 'Bearer ' + IdentityConfig.accessToken,
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Access-Control-Request-Method': '*',
+            'Access-Control-Allow-Methods': '*',
             'Access-Control-Allow-Origin': '*'
-        })
+        }
     })
     .then(response => response.json())
     .then(
