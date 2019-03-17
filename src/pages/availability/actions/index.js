@@ -4,13 +4,15 @@ import IdentityConfig from '../../../helpers/Identity';
 
 export const FIND_ADDRESS = 'FIND_ADDRESS';
 
-export function findAddresses(postcode) {
+export function findAddresses(postcode, phoneNumber) {
     const url = Config.dialogueServicesUrl + '/api/addresses?postcode=' + postcode;
 
     console.log('accessToken: ' + IdentityConfig.accessToken);
     console.log('url: ' + url);
 
     const request = {
+        postcode: postcode,
+        phoneNumber: phoneNumber,
         addresses: []
     };
 

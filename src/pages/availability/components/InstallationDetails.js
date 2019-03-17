@@ -15,23 +15,24 @@ class InstallationDetails extends Component {
         super(props);
 
         this.state = {
-            phoneNumber: '',
-            postcode: 'LU1 1UL',
             postcodeIsValid: true
         };
 
-        this.onInputChange = this.onInputChange.bind(this);
+        this.onPhoneNumberChange = this.onPhoneNumberChange.bind(this);
+        this.onPostcodeChange = this.onPostcodeChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
-    onInputChange (event) {
-        const name = event.target.name;
-        const value = event.target.value;
-        this.setState({[name]: value});
+    onPhoneNumberChange (phoneNumber) {
+        this.props.dispatch('phoneNumber', phoneNumber);
+    }
+
+    onPostcodeChange (postcode) {
+        this.props.dispatch('postcode', postcode);
     }
 
     isPostcodeValid() {
-        return !(this.state.postcode.trim() === '');
+        return !(this.props.postcode.trim() === '');
     }
 
     handleValidation() {
@@ -51,7 +52,7 @@ class InstallationDetails extends Component {
         
         if(this.handleValidation())
         {
-            this.props.findAddresses(this.state.postcode);
+            this.props.findAddresses(this.props.postcode, this.props.phoneNumber);
             return;
         }
     }
@@ -65,8 +66,8 @@ class InstallationDetails extends Component {
                             name="phoneNumber"
                             id="phoneNumber"
                             placeholder="Enter phone number"
-                            value={this.state.phoneNumber}
-                            onChange={(event) => this.onInputChange(event)}
+                            value={this.props.phoneNumber}
+                            onChange={(event) => this.onPhoneNumberChange(event.target.value)}
                         />
                     </Col>
                     <Col>
@@ -74,8 +75,8 @@ class InstallationDetails extends Component {
                             name="postcode"
                             id="postcode"
                             placeholder="Enter postcode"
-                            value={this.state.postcode}
-                            onChange={(event) => this.onInputChange(event)}
+                            value={this.props.postcode}
+                            onChange={(event) => this.onPostcodeChange(event.target.value)}
                             invalid={!this.state.postcodeIsValid}
                         />
                         <FormFeedback valid={this.state.postcodeIsValid}>Please enter a postcode</FormFeedback>
@@ -90,9 +91,18 @@ class InstallationDetails extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        phoneNumber: state.phoneNumber,
+        postcode: state.postcode
+    };
+}
   
 function mapDispatchToProps(dispatch){
-    return bindActionCreators({ findAddresses }, dispatch)
+    return {
+        actions: bindActionCreators({ findAddresses }, dispatch)
+    };
 }
 
-export default connect(null, mapDispatchToProps)(InstallationDetails)
+export default connect(mapStateToProps, mapDispatchToProps)(InstallationDetails)
