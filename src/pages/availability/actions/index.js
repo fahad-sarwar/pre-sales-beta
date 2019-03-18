@@ -1,8 +1,7 @@
 import fetch from 'cross-fetch';
 import Config from '../../../helpers/Config.js';
 import IdentityConfig from '../../../helpers/Identity';
-
-export const FIND_ADDRESS = 'FIND_ADDRESS';
+import * as types from '../../../actions/actionTypes';
 
 export function findAddresses(postcode, phoneNumber) {
     const url = Config.dialogueServicesUrl + '/api/addresses?postcode=' + postcode;
@@ -22,12 +21,15 @@ export function findAddresses(postcode, phoneNumber) {
     })
     .then(response => response.json())
     .then(
-        data => request.addresses = data,
+        data => {
+            request.addresses = data;
+            console.log('findAddresses::data: ' + request);
+        },
         err => console.log('Request failed', err)
     );
 
     return ({
-        type: FIND_ADDRESS,
+        type: types.FIND_ADDRESS,
         payload: request
     })
 }

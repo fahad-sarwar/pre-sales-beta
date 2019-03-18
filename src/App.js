@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router";
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import ReduxPromise from 'redux-promise'; 
 import { Login, PrivateRoute, RenewLogin, SecurityManager } from "@zen/identity-lib";
 import { BrowserRouter } from "react-router-dom";
 import { Container } from "reactstrap";
@@ -15,7 +13,7 @@ import Configuration from "./pages/configuration/Configuration";
 import Identity from "./pages/identity/Identity";
 import Unauthorised from "./pages/Unauthorised";
 import Config from "./helpers/Config";
-import reducers from './reducers';
+import configureStore from './store/configureStore';
 
 const securityProps = {
   securityConfig: {
@@ -32,12 +30,13 @@ const securityProps = {
   unauthorisedComponent: Unauthorised
 };
 
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+//const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+const store = configureStore();
 
 class App extends Component {
   render() {
     return (
-      <Provider store={createStoreWithMiddleware(reducers)}>
+      <Provider store={store}>
         <SecurityManager {...securityProps}>
           <div>
             <AppNavBar />

@@ -1,21 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
-import ReduxPromise from 'redux-promise'; 
 import rootReducer from '../reducers';
+import thunk from 'redux-thunk';
 
-export default function configureStore(initialState) {
-    // initialState = {
-    //     phoneNumber: '',
-    //     postCode: '',
-    //     addresses: [],
-    //     installationAddress: ''
-    // };
-
-    const store = createStore(
+export default function configureStore() {
+    return createStore(
         rootReducer,
-        initialState
+        applyMiddleware(thunk)
     );
-
-    const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(store);
-
-    return createStoreWithMiddleware;
 }
