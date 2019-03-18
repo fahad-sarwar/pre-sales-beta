@@ -9,7 +9,7 @@ export default function reducer_findAddress(state = initialState, action) {
             console.log('reducer_findAddress::action:', action.payload);
             
             return { 
-                // ...state, TODO - what does this do?
+                ...state,
                 phoneNumber: action.payload.phoneNumber,
                 postcode: action.payload.postcode,
                 addresses: action.payload.addresses

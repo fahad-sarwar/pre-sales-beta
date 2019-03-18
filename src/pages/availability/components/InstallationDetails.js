@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import {
   Button,
   Col,
@@ -49,7 +48,7 @@ class InstallationDetails extends Component {
         
         if(this.handleValidation())
         {
-            this.props.actions.findAddresses(this.state.postcode, this.state.phoneNumber);
+            this.props.dispatch(findAddresses(this.state.postcode, this.state.phoneNumber));
             return;
         }
     }
@@ -95,11 +94,5 @@ function mapStateToProps(state) {
         postcode: state.postcode
     };
 }
-  
-function mapDispatchToProps(dispatch){
-    return {
-        actions: bindActionCreators({ findAddresses }, dispatch)
-    };
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(InstallationDetails)
+export default connect(mapStateToProps)(InstallationDetails)
