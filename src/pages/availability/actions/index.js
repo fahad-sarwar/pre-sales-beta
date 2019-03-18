@@ -7,9 +7,6 @@ export const FIND_ADDRESS = 'FIND_ADDRESS';
 export function findAddresses(postcode, phoneNumber) {
     const url = Config.dialogueServicesUrl + '/api/addresses?postcode=' + postcode;
 
-    console.log('accessToken: ' + IdentityConfig.accessToken);
-    console.log('url: ' + url);
-
     const request = {
         postcode: postcode,
         phoneNumber: phoneNumber,
@@ -18,13 +15,9 @@ export function findAddresses(postcode, phoneNumber) {
 
     fetch(url, {
         method: 'get',
-        credentials: 'include',
         headers: {
             'Authorization': 'Bearer ' + IdentityConfig.accessToken,
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Access-Control-Allow-Methods': '*',
-            'Access-Control-Allow-Origin': '*'
+            'Accept': 'application/json'
         }
     })
     .then(response => response.json())
