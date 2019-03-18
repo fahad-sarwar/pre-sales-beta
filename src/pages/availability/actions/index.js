@@ -3,28 +3,9 @@ import Config from '../../../helpers/Config.js';
 import IdentityConfig from '../../../helpers/Identity';
 import * as types from '../../../actions/actionTypes';
 
-export const findAddresses = (postcode, phoneNumber) => dispatch => {
-    const request = {
-        postcode: postcode,
-        phoneNumber: phoneNumber,
-        addresses: []
-    };
+export const findAddresses = (postcode, phoneNumber) => async dispatch => {
+    dispatch(findAddressStarted(postcode, phoneNumber));
 
-    getAddresses(postcode)
-        .then(
-            data => {
-                request.addresses = data
-                console.log('findAddresses::data: ' + data);
-            },
-            err => console.log('Request failed', err)
-        );
-
-    return dispatch(getAddressRequest(request));
-};
-
-export const getAddressRequest = request => ({ type: types.FIND_ADDRESS, payload: request});
-
-const getAddresses = (postcode) => {
     const options = {
         method: 'get',
         headers: {
@@ -35,5 +16,41 @@ const getAddresses = (postcode) => {
 
     const url = Config.dialogueServicesUrl + '/api/addresses?postcode=' + postcode;
 
-    return fetch(url, options).then(response => response.json());  
-}
+    try {
+        const response = await fetch(url, options);
+        var result = await response.json();
+        console.log('result: ' + result);
+        return dispatch(findAddressSuccess(postcode, phoneNumber, result));
+    }
+    catch (err) {
+        console.log('error: ' + err);
+        return dispatch(findAddressFailure(postcode, phoneNumber, err));
+    }
+};
+
+const findAddressStarted = (postcode, phoneNumber) => ({
+    type: types.FIND_ADDRESS_STARTED,
+    payload: {
+        phoneNumber: phoneNumber,
+        postcode: postcode,
+        addresses: []
+    }
+});
+
+const findAddressSuccess = (postcode, phoneNumber, addresses) => ({
+    type: types.FIND_ADDRESS_SUCCESS,
+    payload: {
+        phoneNumber: phoneNumber,
+        postcode: postcode,
+        addresses: addresses
+    }
+});
+
+const findAddressFailure = (postcode, phoneNumber, error) => ({
+    type: types.FIND_ADDRESS_FAILURE,
+    payload: {
+        phoneNumber: phoneNumber,
+        postcode: postcode,
+        findAddressError: error
+    }
+});

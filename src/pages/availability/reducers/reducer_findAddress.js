@@ -5,14 +5,38 @@ import initialState from '../../../reducers/initialState';
 export default function reducer_findAddress(state = initialState, action) {
     switch (action.type) {
 
-        case types.FIND_ADDRESS:
-            console.log('reducer_findAddress::action:', action.payload);
+        case types.FIND_ADDRESS_STARTED: 
+
+            return { 
+                ...state,
+                phoneNumber: action.payload.phoneNumber,
+                postcode: action.payload.postcode,
+                loadingAddresses: true,
+                addressErrorMessage: '',
+                addresses: action.payload.addresses
+            }
+
+        case types.FIND_ADDRESS_SUCCESS:  
             
             return { 
                 ...state,
                 phoneNumber: action.payload.phoneNumber,
                 postcode: action.payload.postcode,
+                loadingAddresses: false,
+                addressErrorMessage: '',
                 addresses: action.payload.addresses
+            }
+        
+
+        case types.FIND_ADDRESS_FAILURE:
+            
+            return { 
+                ...state,
+                phoneNumber: action.payload.phoneNumber,
+                postcode: action.payload.postcode,
+                loadingAddresses: false,
+                addressErrorMessage: 'Error finding addresses.  Please try again',
+                addresses: []
             }
 
         default:
