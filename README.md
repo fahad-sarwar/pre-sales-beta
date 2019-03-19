@@ -137,6 +137,8 @@ https://github.com/jamietwells/typescript-training/blob/master/readme.md
 
 ### Sample React + Redux demos
 
+https://alligator.io/redux/redux-thunk
+
 https://redux.js.org/basics/example
 
 https://github.com/gothinkster/react-redux-realworld-example-app
