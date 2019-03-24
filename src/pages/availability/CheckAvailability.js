@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
-  Card,
-  CardBody,
-  CardHeader,
   Col,
   Row
 } from 'reactstrap';
@@ -33,36 +30,26 @@ class CheckAvailability extends Component {
     render() {
         return (
             <div>
-                <Card>
-                    <CardHeader>Check Availability</CardHeader>
-                    <CardBody>
-                        <InstallationDetails
-                            phoneNumber={this.props.phoneNumber}
-                            postcode={this.props.postcode}
-                            callbackHandler={this.callbackHandler}
-                        />
-                    </CardBody>
-                </Card>
+                <InstallationDetails
+                    phoneNumber={this.props.phoneNumber}
+                    postcode={this.props.postcode}
+                    callbackHandler={this.callbackHandler}
+                />
                 <Row>
                     <Col>&nbsp;</Col>
                     <Col>&nbsp;</Col>
                 </Row>
-                <Card>
-                    <CardHeader>Select Address</CardHeader>
-                    <CardBody>
-                        <AddressList />
-                    </CardBody>
-                </Card>
+                <AddressList
+                    loadingAddresses={this.props.loadingAddresses}
+                    addresses={this.props.addresses}
+                    addressErrorMessage={this.props.addressErrorMessage}
+                    callbackHandler={this.callbackHandler}
+                />
                 <Row>
                     <Col>&nbsp;</Col>
                     <Col>&nbsp;</Col>
                 </Row>
-                <Card>
-                    <CardHeader>Results</CardHeader>
-                    <CardBody>
-                        <BroadbandResults />
-                    </CardBody>
-                </Card>
+                <BroadbandResults />
             </div>
         );
     }
@@ -70,8 +57,11 @@ class CheckAvailability extends Component {
 
 function mapStateToProps(state) {
     return {
-        phoneNumber: state.phoneNumber,
-        postcode: state.postcode
+        phoneNumber: state.phoneNumber || '01142702053',
+        postcode: state.postcode || 'IP6 8ED',
+        loadingAddresses: state.loadingAddresses,
+        addresses: state.addresses || [],
+        addressErrorMessage: state.addressErrorMessage || ''
     };
 }
 

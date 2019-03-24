@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   Button,
+  Card,
+  CardBody,
+  CardHeader,
   Col,
   FormFeedback,
   Input,
@@ -17,8 +20,8 @@ class InstallationDetails extends Component {
         super(props);
 
         this.state = {
-            phoneNumber: this.props.phoneNumber || '01706548458',
-            postcode: this.props.postcode || 'LU1 1UL',
+            phoneNumber: this.props.phoneNumber,
+            postcode: this.props.postcode,
             callbackHandler: this.props.callbackHandler,
             postcodeIsValid: true
         };
@@ -65,40 +68,43 @@ class InstallationDetails extends Component {
 
     render() {
         return (
-            <div>
-                <Row>
-                    <Col>
-                        <Input
-                            name="phoneNumber"
-                            id="phoneNumber"
-                            placeholder="Enter phone number"
-                            value={this.state.phoneNumber}
-                            onChange={(event) => this.onInputChange(event)}
-                        />
-                    </Col>
-                    <Col>
-                        <Input
-                            name="postcode"
-                            id="postcode"
-                            placeholder="Enter postcode"
-                            value={this.state.postcode}
-                            onChange={(event) => this.onInputChange(event)}
-                            invalid={!this.state.postcodeIsValid}
-                        />
-                        <FormFeedback valid={this.state.postcodeIsValid}>Please enter a postcode</FormFeedback>
-                    </Col>
-                    <Col>
-                        <Button block color="primary" type="submit" onClick={(event) => this.onFormSubmit(event)}>
-                            Check
-                        </Button>
-                    </Col>
-                </Row>
-            </div>
+            <Card>
+                <CardHeader>Check Availability</CardHeader>
+                <CardBody>
+                    <Row>
+                        <Col>
+                            <Input
+                                name="phoneNumber"
+                                id="phoneNumber"
+                                placeholder="Enter phone number"
+                                value={this.state.phoneNumber}
+                                onChange={(event) => this.onInputChange(event)}
+                            />
+                        </Col>
+                        <Col>
+                            <Input
+                                name="postcode"
+                                id="postcode"
+                                placeholder="Enter postcode"
+                                value={this.state.postcode}
+                                onChange={(event) => this.onInputChange(event)}
+                                invalid={!this.state.postcodeIsValid}
+                            />
+                            <FormFeedback valid={this.state.postcodeIsValid}>Please enter a postcode</FormFeedback>
+                        </Col>
+                        <Col>
+                            <Button block color="primary" type="submit" onClick={(event) => this.onFormSubmit(event)}>
+                                Check
+                            </Button>
+                        </Col>
+                    </Row>
+                </CardBody>
+            </Card>
         );
     }
 }
 
-InstallationDetails.protoTypes = {
+InstallationDetails.propTypes  = {
     phoneNumber: PropTypes.string.isRequired,
     postcode: PropTypes.string.isRequired,
     callbackHandler: PropTypes.func.isRequired
