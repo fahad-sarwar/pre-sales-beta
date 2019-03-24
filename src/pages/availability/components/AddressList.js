@@ -22,6 +22,8 @@ class AddressList extends Component {
             callbackHandler: this.props.callbackHandler
         };
 
+        console.log('AddressList:state: ' + this.state.loadingAddresses);
+
         // this.onInputChange = this.onInputChange.bind(this);
         // this.onFormSubmit = this.onFormSubmit.bind(this);
     }

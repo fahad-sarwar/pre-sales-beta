@@ -30,7 +30,6 @@ const securityProps = {
   unauthorisedComponent: Unauthorised
 };
 
-//const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 const store = configureStore();
 
 class App extends Component {
