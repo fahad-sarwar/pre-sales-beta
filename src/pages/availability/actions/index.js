@@ -3,8 +3,8 @@ import Config from '../../../helpers/Config.js';
 import IdentityConfig from '../../../helpers/Identity';
 import * as types from '../../../actions/actionTypes';
 
-export const findAddresses = (postcode, phoneNumber) => async dispatch => {
-    dispatch(findAddressStarted(postcode, phoneNumber));
+export const findAddresses = (data) => async dispatch => {
+    dispatch(findAddressStarted(data));
 
     const options = {
         method: 'get',
@@ -14,43 +14,43 @@ export const findAddresses = (postcode, phoneNumber) => async dispatch => {
         }
     };
 
-    const url = Config.dialogueServicesUrl + '/api/addresses?postcode=' + postcode;
+    const url = Config.dialogueServicesUrl + '/api/addresses?postcode=' + data.postcode;
 
     try {
         const response = await fetch(url, options);
         var result = await response.json();
         console.log('result: ' + result);
-        return dispatch(findAddressSuccess(postcode, phoneNumber, result));
+        return dispatch(findAddressSuccess(data, result));
     }
     catch (err) {
         console.log('error: ' + err);
-        return dispatch(findAddressFailure(postcode, phoneNumber, err));
+        return dispatch(findAddressFailure(data, err));
     }
 };
 
-const findAddressStarted = (postcode, phoneNumber) => ({
+const findAddressStarted = (data) => ({
     type: types.FIND_ADDRESS_STARTED,
     payload: {
-        phoneNumber: phoneNumber,
-        postcode: postcode,
+        phoneNumber: data.phoneNumber,
+        postcode: data.postcode,
         addresses: []
     }
 });
 
-const findAddressSuccess = (postcode, phoneNumber, addresses) => ({
+const findAddressSuccess = (data, addresses) => ({
     type: types.FIND_ADDRESS_SUCCESS,
     payload: {
-        phoneNumber: phoneNumber,
-        postcode: postcode,
+        phoneNumber: data.phoneNumber,
+        postcode: data.postcode,
         addresses: addresses
     }
 });
 
-const findAddressFailure = (postcode, phoneNumber, error) => ({
+const findAddressFailure = (data, error) => ({
     type: types.FIND_ADDRESS_FAILURE,
     payload: {
-        phoneNumber: phoneNumber,
-        postcode: postcode,
+        phoneNumber: data.phoneNumber,
+        postcode: data.postcode,
         findAddressError: error
     }
 });

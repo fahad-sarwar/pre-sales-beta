@@ -1,6 +1,6 @@
 export default {
-    phoneNumber: '',
-    postcode: '',
+    phoneNumber: '01706548458',
+    postcode: 'LU1 1UL',
     loadingAddresses: false,
     addressErrorMessage: '',
     addresses: [],

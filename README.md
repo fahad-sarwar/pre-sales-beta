@@ -135,9 +135,9 @@ https://github.com/sohail87/ReduxFormsReactRouterBlog
 
 https://github.com/jamietwells/typescript-training/blob/master/readme.md
 
-### Sample React + Redux demos
+https://itnext.io/dispatching-actions-from-child-components-bd292a51f176
 
-https://alligator.io/redux/redux-thunk
+### Sample React + Redux demos
 
 https://redux.js.org/basics/example
 
@@ -156,6 +156,16 @@ https://codeburst.io/redux-a-crud-example-abb834d763c9
 https://stackoverflow.com/questions/44389288/react-env-variables-with-env
 
 Alternative to dotnet-env https://www.npmjs.com/package/react-global-configuration
+
+### ReactJs + Redux Dos & Donts
+
+https://itnext.io/dispatching-actions-from-child-components-bd292a51f176
+
+https://alligator.io/redux/redux-thunk
+
+https://blog.logrocket.com/react-redux-connect-when-and-how-to-use-it-f2a1edab2013
+
+https://ponyfoo.com/articles/react-state-choose-wisely
 
 #### Sample configuration
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   Button,
   Col,
@@ -7,7 +7,10 @@ import {
   Input,
   Row
 } from 'reactstrap';
-import { findAddresses } from '../actions/index';
+
+const CALLBACK_ENUMS = {
+    FIND_ADDRESS_TASK: 'INSTALLATION_DETAILS/FIND_ADDRESS_TASK'
+};
 
 class InstallationDetails extends Component {
     constructor(props) {
@@ -16,6 +19,7 @@ class InstallationDetails extends Component {
         this.state = {
             phoneNumber: this.props.phoneNumber || '01706548458',
             postcode: this.props.postcode || 'LU1 1UL',
+            callbackHandler: this.props.callbackHandler,
             postcodeIsValid: true
         };
 
@@ -48,7 +52,13 @@ class InstallationDetails extends Component {
         
         if(this.handleValidation())
         {
-            this.props.dispatch(findAddresses(this.state.postcode, this.state.phoneNumber));
+            this.props.callbackHandler(
+                CALLBACK_ENUMS.FIND_ADDRESS_TASK, 
+                {
+                    phoneNumber: this.state.phoneNumber,
+                    postcode: this.state.postcode
+                }
+            );
             return;
         }
     }
@@ -88,11 +98,13 @@ class InstallationDetails extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        phoneNumber: state.phoneNumber,
-        postcode: state.postcode
-    };
-}
+InstallationDetails.protoTypes = {
+    phoneNumber: PropTypes.string.isRequired,
+    postcode: PropTypes.string.isRequired,
+    callbackHandler: PropTypes.func.isRequired
+};
 
-export default connect(mapStateToProps)(InstallationDetails)
+export default InstallationDetails;
+export {
+    CALLBACK_ENUMS as INSTALLATION_DETAILS_CALLBACK_ENUMS
+};
