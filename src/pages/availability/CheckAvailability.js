@@ -4,6 +4,7 @@ import {
   Col,
   Row
 } from 'reactstrap';
+import ErrorMessageBanner from '../../components/ErrorMessageBanner';
 import InstallationDetails, { INSTALLATION_DETAILS_CALLBACK_ENUMS } from './components/InstallationDetails';
 import AddressList from './components/AddressList';
 import BroadbandResults from './components/BroadbandResults';
@@ -30,6 +31,7 @@ class CheckAvailability extends Component {
     render() {
         return (
             <div>
+                <ErrorMessageBanner errorMessages={this.props.errorMessages} />
                 <InstallationDetails
                     phoneNumber={this.props.phoneNumber}
                     postcode={this.props.postcode}
@@ -42,7 +44,6 @@ class CheckAvailability extends Component {
                 <AddressList
                     loadingAddresses={this.props.loadingAddresses}
                     addresses={this.props.addresses}
-                    addressErrorMessage={this.props.addressErrorMessage}
                     callbackHandler={this.callbackHandler}
                 />
                 <Row>
@@ -57,11 +58,11 @@ class CheckAvailability extends Component {
 
 function mapStateToProps(state) {
     return {
+        errorMessages: state.errorMessages,
         phoneNumber: state.phoneNumber || '01142702053',
         postcode: state.postcode || 'IP6 8ED',
         loadingAddresses: state.loadingAddresses,
-        addresses: state.addresses || [],
-        addressErrorMessage: state.addressErrorMessage || ''
+        addresses: state.addresses || []
     };
 }
 

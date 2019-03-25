@@ -18,7 +18,6 @@ class AddressList extends Component {
         this.state = {
             loadingAddresses: this.props.loadingAddresses,
             addresses: this.props.addresses,
-            addressErrorMessage: this.props.addressErrorMessage,
             callbackHandler: this.props.callbackHandler
         };
 
@@ -99,7 +98,6 @@ class AddressList extends Component {
   AddressList.propTypes  = {
       loadingAddresses: PropTypes.bool,
       addresses: PropTypes.array.isRequired,
-      addressErrorMessage: PropTypes.string.isRequired,
       callbackHandler: PropTypes.func.isRequired
   };
   
