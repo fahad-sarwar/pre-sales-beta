@@ -12,18 +12,7 @@ import {
 } from 'reactstrap';
 
 class AddressList extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            callbackHandler: this.props.callbackHandler
-        };
-    }
-
     render() {
-
-        console.log('AddressList:ctor:loadingAddresses: ' + this.props.loadingAddresses);
-
         if (this.props.loadingAddresses === null) {
             return (
                 <div>
@@ -103,7 +92,7 @@ class AddressList extends Component {
   AddressList.propTypes  = {
       loadingAddresses: PropTypes.bool,
       addresses: PropTypes.array,
-      callbackHandler: PropTypes.func.isRequired
+      callbackHandler: PropTypes.func
   };
   
   export default AddressList;

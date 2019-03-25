@@ -31,21 +31,27 @@ class CheckAvailability extends Component {
     render() {
         return (
             <div>
-                <ErrorMessageBanner errorMessages={this.props.errorMessages} />
+                <ErrorMessageBanner
+                    errorMessages={this.props.errorMessages}
+                />
+
                 <InstallationDetails
                     phoneNumber={this.props.phoneNumber}
                     postcode={this.props.postcode}
                     callbackHandler={this.callbackHandler}
                 />
+
                 <Row>
                     <Col>&nbsp;</Col>
                     <Col>&nbsp;</Col>
                 </Row>
+
                 <AddressList
                     loadingAddresses={this.props.loadingAddresses}
                     addresses={this.props.addresses}
                     callbackHandler={this.callbackHandler}
                 />
+                
                 <Row>
                     <Col>&nbsp;</Col>
                     <Col>&nbsp;</Col>
@@ -58,11 +64,11 @@ class CheckAvailability extends Component {
 
 function mapStateToProps(state) {
     return {
-        errorMessages: state.findAddress.errorMessages,
-        phoneNumber: state.findAddress.phoneNumber,
-        postcode: state.findAddress.postcode,
-        loadingAddresses: state.findAddress.loadingAddresses,
-        addresses: state.findAddress.addresses
+        errorMessages: state.addressSearch.errorMessages,
+        phoneNumber: state.addressSearch.phoneNumber,
+        postcode: state.addressSearch.postcode,
+        loadingAddresses: state.addressSearch.loadingAddresses,
+        addresses: state.addressSearch.addresses
     };
 }
 

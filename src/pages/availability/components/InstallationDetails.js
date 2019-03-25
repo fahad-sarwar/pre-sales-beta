@@ -20,26 +20,34 @@ class InstallationDetails extends Component {
         super(props);
 
         this.state = {
-            callbackHandler: this.props.callbackHandler,
+            phoneNumber: this.props.phoneNumber,
+            postcode: this.props.postcode,
             postcodeIsValid: true
         };
-
         this.onInputChange = this.onInputChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
-    onInputChange (event) {
+    async onInputChange (event) {
         this.setState({[event.target.name]: event.target.value});
+
+        if (event.target.name === 'postcode') {
+            console.log('update postcodeIsValid state');
+            await this.setState({postcodeIsValid: this.isPostcodeValid()});
+        }
+
+        console.log('postcodeIsValid: ' + this.state.postcodeIsValid);
     }
 
     isPostcodeValid() {
+        console.log('isPostcodeValid: ' + this.state.postcode);
         return !(this.state.postcode === '');
     }
 
     handleValidation() {
         let formIsValid = true;
 
-        this.setState({postcodeIsValid: this.isPostcodeValid()})
+        this.setState({postcodeIsValid: this.isPostcodeValid()});
 
         if(!this.state.postcodeIsValid) {
             formIsValid = false;
@@ -52,16 +60,18 @@ class InstallationDetails extends Component {
         event.preventDefault();
         
         var isValid = this.handleValidation();
+
+        console.log('phoneNumber: ' + this.state.phoneNumber);
+        console.log('postcode: ' + this.state.postcode);
+        console.log('postcodeIsValid: ' + this.state.postcodeIsValid);
+
         if(isValid)
-        {
-            // TODO: why does this fire even when it fails validation
-            console.log('isValid: ' + isValid);
-            
+        {            
             this.props.callbackHandler(
                 CALLBACK_ENUMS.FIND_ADDRESS_TASK, 
                 {
-                    phoneNumber: this.state.phoneNumber,
-                    postcode: this.state.postcode
+                    phoneNumber: this.props.phoneNumber,
+                    postcode: this.props.postcode
                 }
             );
             return;

@@ -6,15 +6,15 @@ class ErrorMessageBanner extends Component {
     constructor(props) {
         super(props);
 
-        this.showError = this.showError.bind(this);
+        this.showErrorMessages = this.showErrorMessages.bind(this);
     }
 
-    showError() {
-        return this.props.errorMessages !== '';
+    showErrorMessages() {
+        return this.props.errorMessages.length > 0;
     }
 
     render() {
-        if (!this.showError()) {
+        if (!this.showErrorMessages()) {
             return (
                 <div></div>
             );
@@ -22,14 +22,20 @@ class ErrorMessageBanner extends Component {
 
         return (
             <div>
-                <Alert color="danger">{this.props.errorMessages}</Alert>
+                <Alert color="danger">
+                    <ul>
+                        {
+                            this.props.errorMessages.map((item, i) => <li key={i}>{item}</li>)
+                        }
+                    </ul>
+                </Alert>
             </div>          
         );
     }
 }
 
 ErrorMessageBanner.propTypes  = {
-    errorMessages: PropTypes.string
+    errorMessages: PropTypes.array
 };
   
 export default ErrorMessageBanner;
