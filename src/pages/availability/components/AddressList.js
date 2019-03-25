@@ -16,30 +16,35 @@ class AddressList extends Component {
         super(props);
 
         this.state = {
-            loadingAddresses: this.props.loadingAddresses,
-            addresses: this.props.addresses,
             callbackHandler: this.props.callbackHandler
         };
-
-        console.log('AddressList:state: ' + this.state.loadingAddresses);
-
-        // this.onInputChange = this.onInputChange.bind(this);
-        // this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
     render() {
-        if (!this.state.loadingAddresses) {
+
+        console.log('AddressList:ctor:loadingAddresses: ' + this.props.loadingAddresses);
+
+        if (this.props.loadingAddresses === null) {
             return (
                 <div>
                 </div>
             );
         }
 
-        if (this.state.loadingAddresses === false) {
+        if (this.props.loadingAddresses) {
             return (
-                <div className="text-center">
-                    <Spinner color="primary" />
-                </div>
+                <Card>
+                    <CardHeader>Select Address</CardHeader>
+                    <CardBody>
+                        <Row>
+                            <Col>
+                                <div className="text-center">
+                                    <Spinner color="primary" />
+                                </div>
+                            </Col>
+                        </Row>
+                    </CardBody>
+                </Card>
             );
         }
 
@@ -97,7 +102,7 @@ class AddressList extends Component {
 
   AddressList.propTypes  = {
       loadingAddresses: PropTypes.bool,
-      addresses: PropTypes.array.isRequired,
+      addresses: PropTypes.array,
       callbackHandler: PropTypes.func.isRequired
   };
   

@@ -20,8 +20,6 @@ class InstallationDetails extends Component {
         super(props);
 
         this.state = {
-            phoneNumber: this.props.phoneNumber,
-            postcode: this.props.postcode,
             callbackHandler: this.props.callbackHandler,
             postcodeIsValid: true
         };
@@ -35,7 +33,7 @@ class InstallationDetails extends Component {
     }
 
     isPostcodeValid() {
-        return !(this.state.postcode.trim() === '');
+        return !(this.state.postcode === '');
     }
 
     handleValidation() {
@@ -53,9 +51,11 @@ class InstallationDetails extends Component {
     onFormSubmit (event) {
         event.preventDefault();
         
-        if(this.handleValidation())
+        var isValid = this.handleValidation();
+        if(isValid)
         {
             // TODO: why does this fire even when it fails validation
+            console.log('isValid: ' + isValid);
             
             this.props.callbackHandler(
                 CALLBACK_ENUMS.FIND_ADDRESS_TASK, 
@@ -107,8 +107,8 @@ class InstallationDetails extends Component {
 }
 
 InstallationDetails.propTypes  = {
-    phoneNumber: PropTypes.string.isRequired,
-    postcode: PropTypes.string.isRequired,
+    phoneNumber: PropTypes.string,
+    postcode: PropTypes.string,
     callbackHandler: PropTypes.func.isRequired
 };
 

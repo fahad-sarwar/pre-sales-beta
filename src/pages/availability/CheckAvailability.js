@@ -58,11 +58,11 @@ class CheckAvailability extends Component {
 
 function mapStateToProps(state) {
     return {
-        errorMessages: state.errorMessages || '',
-        phoneNumber: state.phoneNumber || '01142702053',
-        postcode: state.postcode || 'IP6 8ED',
-        loadingAddresses: state.loadingAddresses,
-        addresses: state.addresses || []
+        errorMessages: state.findAddress.errorMessages,
+        phoneNumber: state.findAddress.phoneNumber,
+        postcode: state.findAddress.postcode,
+        loadingAddresses: state.findAddress.loadingAddresses,
+        addresses: state.findAddress.addresses
     };
 }
 
