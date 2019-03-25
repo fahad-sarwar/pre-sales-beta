@@ -58,7 +58,7 @@ class CheckAvailability extends Component {
 
 function mapStateToProps(state) {
     return {
-        errorMessages: state.errorMessages,
+        errorMessages: state.errorMessages || '',
         phoneNumber: state.phoneNumber || '01142702053',
         postcode: state.postcode || 'IP6 8ED',
         loadingAddresses: state.loadingAddresses,

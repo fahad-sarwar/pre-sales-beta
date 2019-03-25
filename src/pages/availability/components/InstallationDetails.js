@@ -55,6 +55,8 @@ class InstallationDetails extends Component {
         
         if(this.handleValidation())
         {
+            // TODO: why does this fire even when it fails validation
+            
             this.props.callbackHandler(
                 CALLBACK_ENUMS.FIND_ADDRESS_TASK, 
                 {

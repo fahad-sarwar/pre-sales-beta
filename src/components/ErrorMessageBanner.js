@@ -3,18 +3,27 @@ import PropTypes from 'prop-types';
 import { Alert } from 'reactstrap';
 
 class ErrorMessageBanner extends Component {
+    constructor(props) {
+        super(props);
+
+        this.displayError = this.displayError.bind(this);
+    }
+
+    displayError() {
+        return !(this.props.errorMessages === undefined || this.props.errorMessages === '');
+    }
+
     render() {
-        if (this.props.errorMessages === '') {
+        if (!this.displayError()) {
             return (
-                <div>
-                </div>
+                <div></div>
             );
         }
 
         return (
             <div>
                 <Alert color="danger">{this.props.errorMessages}</Alert>
-            </div>
+            </div>          
         );
     }
 }
