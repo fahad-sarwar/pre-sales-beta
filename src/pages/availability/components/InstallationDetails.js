@@ -24,23 +24,16 @@ class InstallationDetails extends Component {
             postcode: this.props.postcode,
             postcodeIsValid: true
         };
+
         this.onInputChange = this.onInputChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
     async onInputChange (event) {
-        this.setState({[event.target.name]: event.target.value});
-
-        if (event.target.name === 'postcode') {
-            console.log('update postcodeIsValid state');
-            await this.setState({postcodeIsValid: this.isPostcodeValid()});
-        }
-
-        console.log('postcodeIsValid: ' + this.state.postcodeIsValid);
+        this.setState({[event.target.name]: event.target.value}, this.handleValidation);
     }
 
     isPostcodeValid() {
-        console.log('isPostcodeValid: ' + this.state.postcode);
         return !(this.state.postcode === '');
     }
 
@@ -58,14 +51,8 @@ class InstallationDetails extends Component {
 
     onFormSubmit (event) {
         event.preventDefault();
-        
-        var isValid = this.handleValidation();
 
-        console.log('phoneNumber: ' + this.state.phoneNumber);
-        console.log('postcode: ' + this.state.postcode);
-        console.log('postcodeIsValid: ' + this.state.postcodeIsValid);
-
-        if(isValid)
+        if(this.handleValidation())
         {            
             this.props.callbackHandler(
                 CALLBACK_ENUMS.FIND_ADDRESS_TASK, 

@@ -167,6 +167,8 @@ https://blog.logrocket.com/react-redux-connect-when-and-how-to-use-it-f2a1edab20
 
 https://ponyfoo.com/articles/react-state-choose-wisely
 
+https://medium.freecodecamp.org/get-pro-with-react-setstate-in-10-minutes-d38251d1c781
+
 #### Sample configuration
 
 How to read file: https://medium.com/@trekinbami/using-environment-variables-in-react-6b0a99d83cf5
