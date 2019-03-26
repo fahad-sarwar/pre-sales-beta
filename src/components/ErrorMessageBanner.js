@@ -10,7 +10,7 @@ class ErrorMessageBanner extends Component {
     }
 
     showErrorMessages() {
-        return this.props.errorMessages.length > 0;
+        return this.props.errorMessage !== '';
     }
 
     render() {
@@ -23,11 +23,7 @@ class ErrorMessageBanner extends Component {
         return (
             <div>
                 <Alert color="danger">
-                    <ul>
-                        {
-                            this.props.errorMessages.map((item, i) => <li key={i}>{item}</li>)
-                        }
-                    </ul>
+                    {this.props.errorMessage}
                 </Alert>
             </div>          
         );
@@ -35,7 +31,7 @@ class ErrorMessageBanner extends Component {
 }
 
 ErrorMessageBanner.propTypes  = {
-    errorMessages: PropTypes.array
+    errorMessage: PropTypes.string
 };
   
 export default ErrorMessageBanner;

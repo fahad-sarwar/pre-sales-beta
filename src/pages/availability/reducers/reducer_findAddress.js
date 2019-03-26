@@ -11,17 +11,17 @@ export default function reducer_findAddress(state = initialState, action) {
         case types.FIND_ADDRESS_STARTED: 
             return {
                 ...state,
-                errorMessages: [],
+                errorMessage: '',
                 phoneNumber: action.payload.phoneNumber,
                 postcode: action.payload.postcode,
                 loadingAddresses: true,
-                addresses: action.payload.addresses
+                addresses: []
             };
 
         case types.FIND_ADDRESS_SUCCESS:  
             return {
                 ...state,
-                errorMessages: [],
+                errorMessage: '',
                 phoneNumber: action.payload.phoneNumber,
                 postcode: action.payload.postcode,
                 loadingAddresses: false,
@@ -31,7 +31,8 @@ export default function reducer_findAddress(state = initialState, action) {
         case types.FIND_ADDRESS_FAILURE:
             return {
                 ...state,
-                errorMessages: ['Error finding addresses.  Please try again'],
+                //errorMessage: 'Error finding addresses.  Please try again',
+                errorMessage: '',
                 phoneNumber: action.payload.phoneNumber,
                 postcode: action.payload.postcode,
                 loadingAddresses: false,

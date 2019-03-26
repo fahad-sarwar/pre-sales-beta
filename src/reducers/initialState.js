@@ -1,6 +1,6 @@
 export default {
     addressSearch: {
-        errorMessages: [],
+        errorMessage: '',
         phoneNumber: '01706548458',
         postcode: 'LU1 1UL',
         showAddressResults: false,

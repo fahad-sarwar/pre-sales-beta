@@ -53,12 +53,12 @@ class InstallationDetails extends Component {
         event.preventDefault();
 
         if(this.handleValidation())
-        {            
+        {
             this.props.callbackHandler(
                 CALLBACK_ENUMS.FIND_ADDRESS_TASK, 
                 {
-                    phoneNumber: this.props.phoneNumber,
-                    postcode: this.props.postcode
+                    phoneNumber: this.state.phoneNumber,
+                    postcode: this.state.postcode
                 }
             );
             return;

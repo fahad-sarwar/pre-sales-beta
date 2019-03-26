@@ -32,7 +32,7 @@ class CheckAvailability extends Component {
         return (
             <div>
                 <ErrorMessageBanner
-                    errorMessages={this.props.errorMessages}
+                    errorMessage={this.props.errorMessage}
                 />
 
                 <InstallationDetails
@@ -48,6 +48,7 @@ class CheckAvailability extends Component {
 
                 <AddressList
                     loadingAddresses={this.props.loadingAddresses}
+                    postcode={this.props.postcode}
                     addresses={this.props.addresses}
                     callbackHandler={this.callbackHandler}
                 />
@@ -64,7 +65,7 @@ class CheckAvailability extends Component {
 
 function mapStateToProps(state) {
     return {
-        errorMessages: state.addressSearch.errorMessages,
+        errorMessage: state.addressSearch.errorMessage,
         phoneNumber: state.addressSearch.phoneNumber,
         postcode: state.addressSearch.postcode,
         loadingAddresses: state.addressSearch.loadingAddresses,
