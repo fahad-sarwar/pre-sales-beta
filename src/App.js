@@ -18,6 +18,13 @@ import Identity from "./pages/identity/Identity";
 import Unauthorised from "./pages/Unauthorised";
 import Config from "./helpers/Config";
 import configureStore from "./store/configureStore";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faCheckCircle,
+  faTimesCircle
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faCheckCircle, faTimesCircle);
 
 const securityProps = {
   securityConfig: {

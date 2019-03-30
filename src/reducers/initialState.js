@@ -9,7 +9,11 @@ export default {
   availabilityCheck: {
     broadbandResultVisibility: "HIDE",
     errorMessage: "",
-    availabilityCheckResult: {},
+    availabilityCheckResult: {
+      summary: {
+        wasSuccessful: false
+      }
+    },
     selectedInstallationAddress: {}
   }
 };
