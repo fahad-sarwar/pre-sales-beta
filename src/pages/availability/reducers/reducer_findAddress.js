@@ -7,10 +7,10 @@ export default function reducer_findAddress(state = initialState, action) {
       console.log("action: " + action.type);
       return {
         ...state,
+        addressListStatus: "loading",
         errorMessage: "",
         phoneNumber: action.payload.phoneNumber,
         postcode: action.payload.postcode,
-        addressListStatus: "loading",
         addresses: []
       };
 
@@ -18,13 +18,13 @@ export default function reducer_findAddress(state = initialState, action) {
       console.log(action.type);
       return {
         ...state,
-        errorMessage: "",
-        phoneNumber: action.payload.phoneNumber,
-        postcode: action.payload.postcode,
         addressListStatus:
           (action.payload.addresses || []).length > 0
             ? "addresses-found"
             : "no-addresses-found",
+        errorMessage: "",
+        phoneNumber: action.payload.phoneNumber,
+        postcode: action.payload.postcode,
         addresses: action.payload.addresses
       };
 
@@ -32,10 +32,10 @@ export default function reducer_findAddress(state = initialState, action) {
       console.log(action.type);
       return {
         ...state,
+        addressListStatus: "no-addresses-found",
         errorMessage: "",
         phoneNumber: action.payload.phoneNumber,
         postcode: action.payload.postcode,
-        addressListStatus: "no-addresses-found",
         addresses: []
       };
 

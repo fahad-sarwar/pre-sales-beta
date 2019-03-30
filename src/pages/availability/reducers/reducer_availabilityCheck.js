@@ -6,6 +6,17 @@ export default function reducer_availabilityCheck(
   action
 ) {
   switch (action.type) {
+    case types.FIND_ADDRESS_STARTED:
+    case types.FIND_ADDRESS_SUCCESS:
+    case types.FIND_ADDRESS_FAILURE:
+      console.log(action.type);
+      return {
+        ...state,
+        broadbandResultsStatus: "hide",
+        errorMessage: "",
+        selectedInstallationAddress: {}
+      };
+
     case types.AVAILABILITY_CHECK_STARTED:
       console.log(action.type);
       return {

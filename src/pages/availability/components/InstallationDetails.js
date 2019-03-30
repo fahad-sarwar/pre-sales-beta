@@ -5,6 +5,7 @@ import {
   Card,
   CardBody,
   CardHeader,
+  CardText,
   Col,
   FormFeedback,
   Input,
@@ -69,6 +70,23 @@ class InstallationDetails extends Component {
       <Card>
         <CardHeader>Check Availability</CardHeader>
         <CardBody>
+          <CardText>
+            This page enables you to perform an availability check by specifying
+            the Customer's phonenumber and / or postcode.
+          </CardText>
+          <ul>
+            <li>
+              Specifying just a phone number returns broadband availability.
+            </li>
+            <li>
+              Specifying just a postcode returns broadband and phone line
+              availability.
+            </li>
+            <li>
+              Specifying a phonenumber and postcode returns phone line
+              installation details and broadband and phone line availability.
+            </li>
+          </ul>
           <Row>
             <Col>
               <Input
