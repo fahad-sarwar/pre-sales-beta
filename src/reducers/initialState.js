@@ -1,11 +1,15 @@
 export default {
-    addressSearch: {
-        errorMessage: '',
-        phoneNumber: '01706548458',
-        postcode: 'LU1 1UL',
-        showAddressResults: false,
-        loadingAddresses: null,
-        addresses: [],
-        selectInstallationAddress: ''
-    }
-}
+  addressSearch: {
+    addressListStatus: "hide",
+    errorMessage: "",
+    phoneNumber: "01706548458",
+    postcode: "LU1 1UL",
+    addresses: []
+  },
+  availabilityCheck: {
+    broadbandResultsStatus: "hide",
+    errorMessage: "",
+    availabilityCheckResult: {},
+    selectedInstallationAddress: {}
+  }
+};

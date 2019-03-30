@@ -1,45 +1,45 @@
-
-import * as types from '../../../actions/actionTypes';
-import initialState from '../../../reducers/initialState';
+import * as types from "../../../actions/actionTypes";
+import initialState from "../../../reducers/initialState";
 
 export default function reducer_findAddress(state = initialState, action) {
-    
-    console.log(action.type);
-    
-    switch (action.type) {
+  switch (action.type) {
+    case types.FIND_ADDRESS_STARTED:
+      console.log("action: " + action.type);
+      return {
+        ...state,
+        errorMessage: "",
+        phoneNumber: action.payload.phoneNumber,
+        postcode: action.payload.postcode,
+        addressListStatus: "loading",
+        addresses: []
+      };
 
-        case types.FIND_ADDRESS_STARTED: 
-            return {
-                ...state,
-                errorMessage: '',
-                phoneNumber: action.payload.phoneNumber,
-                postcode: action.payload.postcode,
-                loadingAddresses: true,
-                addresses: []
-            };
+    case types.FIND_ADDRESS_SUCCESS:
+      console.log(action.type);
+      return {
+        ...state,
+        errorMessage: "",
+        phoneNumber: action.payload.phoneNumber,
+        postcode: action.payload.postcode,
+        addressListStatus:
+          (action.payload.addresses || []).length > 0
+            ? "addresses-found"
+            : "no-addresses-found",
+        addresses: action.payload.addresses
+      };
 
-        case types.FIND_ADDRESS_SUCCESS:  
-            return {
-                ...state,
-                errorMessage: '',
-                phoneNumber: action.payload.phoneNumber,
-                postcode: action.payload.postcode,
-                loadingAddresses: false,
-                addresses: action.payload.addresses
-            };        
+    case types.FIND_ADDRESS_FAILURE:
+      console.log(action.type);
+      return {
+        ...state,
+        errorMessage: "",
+        phoneNumber: action.payload.phoneNumber,
+        postcode: action.payload.postcode,
+        addressListStatus: "no-addresses-found",
+        addresses: []
+      };
 
-        case types.FIND_ADDRESS_FAILURE:
-            return {
-                ...state,
-                //errorMessage: 'Error finding addresses.  Please try again',
-                errorMessage: '',
-                phoneNumber: action.payload.phoneNumber,
-                postcode: action.payload.postcode,
-                loadingAddresses: false,
-                addresses: []
-            };
-
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 }

@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router";
-import { Provider } from 'react-redux';
-import { Login, PrivateRoute, RenewLogin, SecurityManager } from "@zen/identity-lib";
+import { Provider } from "react-redux";
+import {
+  Login,
+  PrivateRoute,
+  RenewLogin,
+  SecurityManager
+} from "@zen/identity-lib";
 import { BrowserRouter } from "react-router-dom";
-import { Container } from "reactstrap";
 import "./App.css";
 import navConfig from "./_navConfig";
 import AppNavBar from "./components/AppNavBar";
@@ -13,7 +17,7 @@ import Configuration from "./pages/configuration/Configuration";
 import Identity from "./pages/identity/Identity";
 import Unauthorised from "./pages/Unauthorised";
 import Config from "./helpers/Config";
-import configureStore from './store/configureStore';
+import configureStore from "./store/configureStore";
 
 const securityProps = {
   securityConfig: {
@@ -39,7 +43,7 @@ class App extends Component {
         <SecurityManager {...securityProps}>
           <div>
             <AppNavBar />
-            <Container className="navbar-body-padding">
+            <div className="navbar-body-padding">
               <BrowserRouter>
                 <Switch>
                   <Route exact={true} path="/" component={Home} />
@@ -75,10 +79,9 @@ class App extends Component {
                     name="Login"
                     component={Login}
                   />
-
                 </Switch>
               </BrowserRouter>
-            </Container>
+            </div>
           </div>
         </SecurityManager>
       </Provider>
