@@ -8,10 +8,10 @@ import {
   CardHeader,
   CardText,
   Col,
-  Input,
   Row,
   Spinner
 } from "reactstrap";
+import Select from "react-select";
 
 const CALLBACK_ENUMS = {
   ADDRESS_SELECTED_TASK: "ADDRESS_LIST/ADDRESS_SELECTED_TASK"
@@ -29,8 +29,8 @@ class AddressList extends Component {
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
-  async onInputChange(event) {
-    this.setState({ selectedInstallationAddressIndex: event.target.value });
+  async onInputChange(opt) {
+    this.setState({ selectedInstallationAddressIndex: opt.value });
   }
 
   onFormSubmit(event) {
@@ -83,45 +83,13 @@ class AddressList extends Component {
           </CardText>
           <Row>
             <Col>
-              <Input
-                type="select"
-                name="selectAddress"
-                as="selectAddress"
-                size="7"
-                onChange={event => this.onInputChange(event)}
-                defaultValue={this.state.selectedInstallationAddressIndex}
-              >
-                {this.props.addresses.map((address, i) => (
-                  <option
-                    key={i}
-                    value={i}
-                    data-address-key={address.addressKey}
-                    data-district-code={address.districtCode}
-                    data-country={address.country}
-                    data-county={address.county}
-                    data-dependent-thoroughfare-name={
-                      address.dependentThoroughfareName
-                    }
-                    data-double-dependent-locality={
-                      address.doubleDependentLocality
-                    }
-                    data-easting={address.easting}
-                    data-full-address={address.fullAddress}
-                    data-locality={address.locality}
-                    data-northing={address.northing}
-                    data-organisation-name={address.organisationName}
-                    data-po-box={address.poBox}
-                    data-post-code={address.postCode}
-                    data-post-town={address.postTown}
-                    data-premises-name={address.premisesName}
-                    data-sub-premises={address.subPremises}
-                    data-thoroughfare-name={address.thoroughfareName}
-                    data-thoroughfare-number={address.thoroughfareNumber}
-                  >
-                    {address.fullAddress}
-                  </option>
-                ))}
-              </Input>
+              <Select
+                options={this.props.addresses.map((address, i) => ({
+                  label: address.fullAddress,
+                  value: i
+                }))}
+                onChange={opt => this.onInputChange(opt)}
+              />
             </Col>
           </Row>
           <Row>
