@@ -12,7 +12,7 @@ export default function reducer_availabilityCheck(
       console.log(action.type);
       return {
         ...state,
-        broadbandResultsStatus: "hide",
+        broadbandResultVisibility: "HIDE",
         errorMessage: "",
         selectedInstallationAddress: {}
       };
@@ -21,7 +21,7 @@ export default function reducer_availabilityCheck(
       console.log(action.type);
       return {
         ...state,
-        broadbandResultsStatus: "loading",
+        broadbandResultVisibility: "LOADING",
         errorMessage: "",
         selectedInstallationAddress: action.payload.selectedInstallationAddress
       };
@@ -30,7 +30,7 @@ export default function reducer_availabilityCheck(
       console.log(action.type);
       return {
         ...state,
-        broadbandResultsStatus: "availability-check-succeeded",
+        broadbandResultVisibility: "AVAILABILITY-CHECK-SUCCEEDED",
         errorMessage: "",
         selectedInstallationAddress: action.payload.selectedInstallationAddress,
         availabilityCheckResult: action.payload.availabilityCheckResult
@@ -40,7 +40,7 @@ export default function reducer_availabilityCheck(
       console.log(action.type);
       return {
         ...state,
-        broadbandResultsStatus: "availability-check-failure",
+        broadbandResultVisibility: "AVAILABILITY-CHECK-FAILED",
         errorMessage: action.payload.availabilityCheckError,
         selectedInstallationAddress: action.payload.selectedInstallationAddress
       };

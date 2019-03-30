@@ -6,6 +6,7 @@ import {
   Card,
   CardBody,
   CardHeader,
+  CardText,
   Col,
   Input,
   Row,
@@ -45,11 +46,11 @@ class AddressList extends Component {
   }
 
   render() {
-    if (this.props.addressListStatus === "hide") {
+    if (this.props.addressListVisibility === "HIDE") {
       return <div />;
     }
 
-    if (this.props.addressListStatus === "loading") {
+    if (this.props.addressListVisibility === "LOADING") {
       return (
         <Row>
           <Col>
@@ -61,7 +62,7 @@ class AddressList extends Component {
       );
     }
 
-    if (this.props.addressListStatus === "no-addresses-found") {
+    if (this.props.addressListVisibility === "NO-ADDRESSES-FOUND") {
       return (
         <Row>
           <Col>
@@ -77,6 +78,9 @@ class AddressList extends Component {
       <Card>
         <CardHeader>Select Address</CardHeader>
         <CardBody>
+          <CardText>
+            Please select your address from the following list:
+          </CardText>
           <Row>
             <Col>
               <Input
@@ -141,7 +145,7 @@ class AddressList extends Component {
 }
 
 AddressList.propTypes = {
-  addressListStatus: PropTypes.string.isRequired,
+  addressListVisibility: PropTypes.string.isRequired,
   postcode: PropTypes.string,
   addresses: PropTypes.array,
   selectedInstallationAddress: PropTypes.object,

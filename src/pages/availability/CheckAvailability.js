@@ -50,7 +50,7 @@ class CheckAvailability extends Component {
         </Row>
 
         <AddressList
-          addressListStatus={this.props.addressListStatus}
+          addressListVisibility={this.props.addressListVisibility}
           postcode={this.props.postcode}
           addresses={this.props.addresses}
           callbackHandler={this.callbackHandler}
@@ -61,7 +61,9 @@ class CheckAvailability extends Component {
           <Col>&nbsp;</Col>
         </Row>
         <BroadbandResults
-          broadbandResultsStatus={this.props.broadbandResultsStatus}
+          broadbandResultVisibility={this.props.broadbandResultVisibility}
+          availabilityCheckResult={this.props.availabilityCheckResult}
+          selectedInstallationAddress={this.props.selectedInstallationAddress}
         />
       </div>
     );
@@ -70,14 +72,16 @@ class CheckAvailability extends Component {
 
 function mapStateToProps(state) {
   return {
-    addressListStatus: state.addressSearch.addressListStatus,
+    addressListVisibility: state.addressSearch.addressListVisibility,
     errorMessage: state.addressSearch.errorMessage,
     phoneNumber: state.addressSearch.phoneNumber,
     postcode: state.addressSearch.postcode,
     addresses: state.addressSearch.addresses,
     selectedInstallationAddress:
-      state.addressSearch.selectedInstallationAddress,
-    broadbandResultsStatus: state.availabilityCheck.broadbandResultsStatus
+      state.availabilityCheck.selectedInstallationAddress,
+    broadbandResultVisibility:
+      state.availabilityCheck.broadbandResultVisibility,
+    availabilityCheckResult: state.availabilityCheck.availabilityCheckResult
   };
 }
 

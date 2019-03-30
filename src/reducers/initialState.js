@@ -1,13 +1,13 @@
 export default {
   addressSearch: {
-    addressListStatus: "hide",
+    addressListVisibility: "HIDE",
     errorMessage: "",
     phoneNumber: "01706548458",
     postcode: "LU1 1UL",
     addresses: []
   },
   availabilityCheck: {
-    broadbandResultsStatus: "hide",
+    broadbandResultVisibility: "HIDE",
     errorMessage: "",
     availabilityCheckResult: {},
     selectedInstallationAddress: {}

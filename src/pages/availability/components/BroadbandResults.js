@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import {
   Alert,
+  Badge,
   Card,
   CardBody,
   CardHeader,
+  CardText,
   Col,
   Row,
   Spinner
@@ -25,11 +27,11 @@ class BroadbandResults extends Component {
   }
 
   render() {
-    if (this.props.broadbandResultsStatus === "hide") {
+    if (this.props.broadbandResultVisibility === "HIDE") {
       return <div />;
     }
 
-    if (this.props.broadbandResultsStatus === "loading") {
+    if (this.props.broadbandResultVisibility === "LOADING") {
       return (
         <Row>
           <Col>
@@ -41,7 +43,17 @@ class BroadbandResults extends Component {
       );
     }
 
-    if (this.props.addressListStatus === "availability-check-failure") {
+    if (this.props.broadbandResultVisibility === "AVAILABILITY-CHECK-FAILED") {
+      return (
+        <Row>
+          <Col>
+            <Alert color="warning">Availability check failed</Alert>
+          </Col>
+        </Row>
+      );
+    }
+
+    if (!this.props.availabilityCheckResult.summary.wasSuccessful) {
       return (
         <Row>
           <Col>
@@ -55,6 +67,12 @@ class BroadbandResults extends Component {
       <Card>
         <CardHeader>Results</CardHeader>
         <CardBody>
+          <CardText>
+            BT Availability Checker results for address &nbsp;
+            <Badge color="info">
+              {this.props.selectedInstallationAddress.fullAddress}
+            </Badge>
+          </CardText>
           <Row>
             <Col xs="1">Product</Col>
             <Col xs="1">RAG</Col>
@@ -124,7 +142,9 @@ class BroadbandResults extends Component {
 }
 
 BroadbandResults.propTypes = {
-  broadbandResultsStatus: PropTypes.string.isRequired
+  broadbandResultVisibility: PropTypes.string.isRequired,
+  availabilityCheckResult: PropTypes.object,
+  selectedInstallationAddress: PropTypes.object
 };
 
 export default BroadbandResults;
