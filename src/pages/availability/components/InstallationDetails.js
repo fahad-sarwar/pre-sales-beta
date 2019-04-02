@@ -68,7 +68,7 @@ class InstallationDetails extends Component {
   render() {
     return (
       <Card>
-        <CardHeader>Check Availability</CardHeader>
+        <CardHeader>Availability Checker</CardHeader>
         <CardBody>
           <CardText>
             This page enables you to perform an availability check by specifying

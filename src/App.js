@@ -21,10 +21,12 @@ import configureStore from "./store/configureStore";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faCheckCircle,
-  faTimesCircle
+  faTimesCircle,
+  faCheck,
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faCheckCircle, faTimesCircle);
+library.add(faCheckCircle, faTimesCircle, faCheck, faTimes);
 
 const securityProps = {
   securityConfig: {

@@ -67,7 +67,8 @@ class AddressList extends Component {
         <Row>
           <Col>
             <Alert color="warning">
-              No addresses found matching postcode '{this.props.postcode}'
+              Did not find any matching addresses for postcode '
+              {this.props.postcode}'.
             </Alert>
           </Col>
         </Row>

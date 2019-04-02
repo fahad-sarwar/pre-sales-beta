@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class TechnologyAvailabilityFlag extends Component {
   render() {
     if (this.props.isAvailable) {
-      return <FontAwesomeIcon icon="check-circle" color="#76D7C4" />;
+      return <FontAwesomeIcon icon="check" color="#76D7C4" />;
     }
 
-    return <FontAwesomeIcon icon="times-circle" color="#CD5C5C" />;
+    return <FontAwesomeIcon icon="times" color="#CD5C5C" />;
   }
 }
 

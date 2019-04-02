@@ -37,21 +37,17 @@ class BroadbandResults extends Component {
       );
     }
 
-    if (this.props.broadbandResultVisibility === "AVAILABILITY-CHECK-FAILED") {
+    if (
+      this.props.broadbandResultVisibility === "AVAILABILITY-CHECK-FAILED" ||
+      !this.props.availabilityCheckResult.summary.wasSuccessful
+    ) {
       return (
         <Row>
           <Col>
-            <Alert color="warning">Availability check failed</Alert>
-          </Col>
-        </Row>
-      );
-    }
-
-    if (!this.props.availabilityCheckResult.summary.wasSuccessful) {
-      return (
-        <Row>
-          <Col>
-            <Alert color="warning">Availability check failed</Alert>
+            <Alert color="warning">
+              We are unable to find a valid record for the search criteria
+              entered. Please check the format and try again.
+            </Alert>
           </Col>
         </Row>
       );
